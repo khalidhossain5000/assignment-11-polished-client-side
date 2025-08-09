@@ -19,7 +19,9 @@ const Home = () => {
       <Slider></Slider>
       <BookCategories></BookCategories>
       <NewArrivals />
-
+      <h3 className=" text-3xl text-center font-bold py-24 ">
+        This is testing Color theme as shdgo
+      </h3>
       <Testimonial></Testimonial>
     </div>
   );

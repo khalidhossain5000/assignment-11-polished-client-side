@@ -1,5 +1,40 @@
 @import "tailwindcss";
-@plugin "daisyui";
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark;
+}
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  /* --font-display: "Satoshi", "sans-serif";
+  --breakpoint-3xl: 120rem; */
+  --font-primary: "Urbanist", "sans-serif";
+  --font-secondary: "Inter", "sans-serif";
+
+  --color-light-primary: #18f115;
+  --color-light-secondary: #71f7a1;
+  --color-light-background: #f9fff9;
+  --color-light-text: #011801;
+
+  /* FOR DARK THEME */
+  --color-dark-primary: #040110;
+  --color-dark-secondary: #8d6ffa;
+  --color-dark-background: #8306a9;
+  --color-dark-text: #e8e1fe;
+
+  /* ... */
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 a.active{
