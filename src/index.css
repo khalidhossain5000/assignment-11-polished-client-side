@@ -55,3 +55,37 @@ a.active{
 }
 
 
+/* swiper js  */
+
+.swiper-button-next,
+.swiper-button-prev {
+    background-color: white;
+    right:10px;
+    padding: 30px;
+    color: #18f115 !important;
+    fill: black !important;
+    stroke: black !important;
+    border-radius: 50%;
+    font-size: 30px !important;
+}
+
+
+
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 30px !important;
+  font-weight: bold;
+  
+}
+
+
+
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: #18f115;
+  color: white !important;
+  transition: .3s;
+  transform: scale(1.15); /* slight zoom on hover */
+}
