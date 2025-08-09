@@ -95,7 +95,7 @@ useEffect(() => {
   );
   return (
     <div className={
-        `font-secondary fixed top-0 z-50 w-full transition-all duration-300 ease-out ` +
+        `font-secondary shadow-xl fixed top-0 z-50 w-full transition-all duration-300 ease-out ` +
         (isSticky
           ? 'bg-[#f9fff990] backdrop-blur-md shadow-sm'
           : 'bg-light-background')
