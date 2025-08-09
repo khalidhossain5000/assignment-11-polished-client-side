@@ -139,7 +139,7 @@ useEffect(() => {
           </div>
       </div>
 
-      <div className="navbar-center hidden lg:flex flex-1">
+      <div className="navbar-center hidden lg:flex flex-1 lg:whitespace-nowrap">
         <ul className="flex items-center gap-3 font-bold px-1">
           {links}
         </ul>
