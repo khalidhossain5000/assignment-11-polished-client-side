@@ -18,6 +18,7 @@ import AllUsers from "../Pages/DashBoard/AllUsers/AllUsers";
 import BookReviewForm from "../Pages/AddBookReview/BookReviewForm";
 import AllBookReview from "../Pages/DashBoard/AllBookReview/AllBookReview";
 import AllBooksReview from "../Pages/AllBooksReview/AllBooksReview";
+import BookReviewsDetails from "../Pages/Home/BookReviewSection/BookReviewsDetails";
 
 export const router = createBrowserRouter([
   {
@@ -75,6 +76,14 @@ export const router = createBrowserRouter([
             <BookReviewForm></BookReviewForm>
           </PrivateRoute>
         )
+      },
+      {
+        path: "book-review-details/:id",
+        element: (
+          <PrivateRoute>
+            <BookReviewsDetails></BookReviewsDetails>
+          </PrivateRoute>
+        ),
       },
       {
         path: "borrowed-books/:email",
