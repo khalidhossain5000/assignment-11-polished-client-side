@@ -29,7 +29,7 @@ const BookCategories = () => {
                 <p className="py-2 md:py-4 font-secondary text-light-text text-sm lg:text-xl ">{cat.des}</p>
               </div>
               <div className="text-center">
-                <Link to={`/category/${cat.name.toLocaleLowerCase()}`}>
+                <Link to={`/book-categories/${cat.name.toLocaleLowerCase()}`}>
                   <button className="cursor-pointer hover:scale-105 hover:border-b-light-primary transition duration-300 text-sm md:text-xl lg:text-2xl text-center font-secondary text-light-text font-bold border-b-2 border-b-light-secondary">See More</button>
                 </Link>
               </div>

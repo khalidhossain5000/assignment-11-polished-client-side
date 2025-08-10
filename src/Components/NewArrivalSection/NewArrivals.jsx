@@ -2,13 +2,13 @@ import React from "react";
 // import ScrollLinked from "../../Components/Motion/ScrollLinked";
 // import img1 from "../../assets/BookImg/786aad002_41022.jpg";
 
-import img1 from "../../assets/BookImg/NewArrival/ভিনগ্রহের প্রাণী এলিয়েন.jpg";
-import img2 from "../../assets/BookImg/NewArrival/লোলার জগৎ.jpg";
-import img3 from "../../assets/BookImg/NewArrival/The Old Man and The Sea.jpg";
-import img4 from "../../assets/BookImg/NewArrival/লুকিং ফর দ্য এনিমি.jpg";
-import img5 from "../../assets/BookImg/NewArrival/সেরা সাত সায়েন্স ফিকশন.jpg";
-import img6 from "../../assets/BookImg/NewArrival/ডিটেকটিভ রাহাদ.jpg";
-import img7 from "../../assets/BookImg/NewArrival/প্রথম প্রহর.jpg";
+import img1 from "../../assets/BookImg/NewArrival/New-Polished/Neuromancer_Sprawl_Trilogy-William_Gibson-img-i.jpg";
+import img2 from "../../assets/BookImg/NewArrival/New-Polished/A_Beginners_Guide_To_Data_Science_-Enamul_Haque--com-cat.jpg";
+import img3 from "../../assets/BookImg/NewArrival/New-Polished/Famous_Science_Fiction-Book_Club-img-ii.png";
+import img4 from "../../assets/BookImg/NewArrival/New-Polished/Schaums_Outline_of_Programming_with_C-Byron_S_.jpg";
+import img5 from "../../assets/BookImg/NewArrival/New-Polished/The_Invisible_Man_-H_G_Wells-img-iiii.jpg";
+import img6 from "../../assets/BookImg/NewArrival/New-Polished/The_Most_Powerful_Success_Series.jpg";
+import img7 from "../../assets/BookImg/NewArrival/New-Polished/as-a-man-motiv-dev-books.jpg";
 
 // import Swiper core and required modules
 import { Autoplay, Pagination, EffectCoverflow } from "swiper/modules";
@@ -20,15 +20,15 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 const NewArrivals = () => {
   return (
-    <div className="bg-gradient-to-br from-[#c0e3f7] via-[#dfc7ea] to-[#c0e3f7] py-12 lg:py-24">
-      <h1 className="text-6xl font-bold text-[#1F2937] text-center py-6">
+    <div className="bg-light-secondary py-12 lg:py-24 border-t border-t-light-primary">
+      <h1 className="text-xl md:text-2xl lg:text-5xl font-primary text-light-text font-bold md:font-extrabold text-center pb-3">
         New Arrivals
       </h1>
 
-      <h5 className="text-2xl font-semibold text-black text-center py-3 mb-6 lg:mb-12">
+      <h5 className="text-xl md:text-2xl font-secondary font-semibold text-light-text text-center py-3 mb-6 lg:mb-12">
         Check out the newest books just added to our library!
       </h5>
-      <div className="container mx-auto py-12 ">
+      <div className="container mx-auto py-12 md:pt-22">
         <Swiper
           modules={[Autoplay, Pagination, EffectCoverflow]}
           effect="coverflow"
@@ -65,18 +65,18 @@ const NewArrivals = () => {
         >
           {/* slider -1 */}
           <SwiperSlide>
-            <div className="relative p-6 lg:p-12 shadow-2xl rounded-md text-center flex flex-col items-center space-y-12 bg-gradient-to-bl from-[#ffffff] via-[#cef6ef30] to-[#e5dbff]">
+            <div className="relative p-6 lg:p-12 shadow-2xl rounded-md text-center flex flex-col items-center space-y-12 bg-gradient-to-bl from-light-background to-light-secondary">
               <div className="shadow-xl rounded-xl ">
                 <img className="w-56 p-2" src={img1} alt="" />
               </div>
               <div className="content">
-                <h3 className="hind-siliguri lg:text-2xl rounded-xl font-bold text-[#1F2937] text-center">
-                  ভিনগ্রহের প্রাণী এলিয়েন
+                <h3 className="font-primary text-xl md:text-2xl font-semibold text-light-text  text-center">
+                  Neuromancer (Sprawl Trilogy)
                 </h3>
-                <h5 className="lg:text-[18px] pt-3 font-medium">
-                  By{" "}
-                  <span className="hind-siliguri font-bold text-blue-600">
-                    শামসুজ্জামান শামস
+                <h5 className=" lg:text-[18px] pt-3 font-medium">
+                  By
+                  <span className="ml-2 font-secondary font-bold text-light-text">
+                    William Gibson
                   </span>
                 </h5>
               </div>
@@ -84,18 +84,18 @@ const NewArrivals = () => {
           </SwiperSlide>
           {/* slider -2 */}
           <SwiperSlide>
-            <div className="relative p-6 lg:p-12 shadow-2xl rounded-md text-center flex flex-col items-center space-y-12 bg-gradient-to-bl from-[#ffffff] via-[#cef6ef30] to-[#e5dbff]">
+            <div className="relative p-6 lg:p-12 shadow-2xl rounded-md text-center flex flex-col items-center space-y-12 bg-gradient-to-bl from-light-background to-light-secondary">
               <div className="shadow-xl rounded-xl ">
                 <img className="w-56 p-2" src={img2} alt="" />
               </div>
               <div className="content">
-                <h3 className="hind-siliguri lg:text-2xl rounded-xl font-bold text-[#1F2937] text-center">
-                  লোলার জগৎ
+                <h3 className="font-primary text-xl md:text-2xl font-semibold text-light-text  text-center">
+                  A Beginner's Guide To Data Science
                 </h3>
-                <h5 className="lg:text-[18px] pt-3 font-medium">
+                <h5 className=" lg:text-[18px] pt-3 font-medium">
                   By
-                  <span className="hind-siliguri font-bold text-blue-600">
-                    মোহাম্মদ সাইফূল ইসলাম
+                  <span className="ml-2 font-secondary font-bold text-light-text">
+                    Enamul Haque
                   </span>
                 </h5>
               </div>
@@ -103,18 +103,18 @@ const NewArrivals = () => {
           </SwiperSlide>          
         {/* slider -3 */}
           <SwiperSlide>
-            <div className="relative p-6 lg:p-12 shadow-2xl rounded-md text-center flex flex-col items-center space-y-12 bg-gradient-to-bl from-[#ffffff] via-[#cef6ef30] to-[#e5dbff]">
+            <div className="relative p-6 lg:p-12 shadow-2xl rounded-md text-center flex flex-col items-center space-y-12 bg-gradient-to-bl from-light-background to-light-secondary">
               <div className="shadow-xl rounded-xl ">
                 <img className="w-56 p-2" src={img3} alt="" />
               </div>
               <div className="content">
-                <h3 className="lg:text-2xl rounded-xl font-bold text-[#1F2937] text-center">
-                  The Old Man and The Sea (Award-Winning Authors' Books)
+                <h3 className="font-primary text-xl md:text-2xl font-semibold text-light-text  text-center">
+                  Famous Science Fiction
                 </h3>
                 <h5 className="lg:text-[18px] pt-3 font-medium">
-                  By 
-                  <span className="mx-2 font-bold text-blue-600">
-                   Ernest Hemingway
+                  By
+                  <span className="ml-2 font-secondary font-bold text-light-text">
+                    Book Club
                   </span>
                 </h5>
               </div>
@@ -122,18 +122,18 @@ const NewArrivals = () => {
           </SwiperSlide>        
           {/* slider -4*/}
           <SwiperSlide>
-            <div className="relative p-6 lg:p-12 shadow-2xl rounded-md text-center flex flex-col items-center space-y-12 bg-gradient-to-bl from-[#ffffff] via-[#cef6ef30] to-[#e5dbff]">
+            <div className="relative p-6 lg:p-12 shadow-2xl rounded-md text-center flex flex-col items-center space-y-12 bg-gradient-to-bl from-light-background to-light-secondary">
               <div className="shadow-xl rounded-xl ">
                 <img className="w-56 p-2" src={img4} alt="" />
               </div>
               <div className="content">
-                <h3 className="lg:text-2xl rounded-xl font-bold text-[#1F2937] text-center">
-                  লুকিং ফর দ্য এনিমি
+                <h3 className="font-primary text-xl md:text-2xl font-semibold text-light-text  text-center">
+                  Schaum's Outline of Programming with C
                 </h3>
                 <h5 className="lg:text-[18px] pt-3 font-medium">
-                  By 
-                  <span className="mx-2 font-bold text-blue-600">
-                   বেটি ড্যাম,মো.আবু বকর সিদ্দীক(অনুবাদক)
+                  By
+                  <span className="ml-2 font-secondary font-bold text-light-text">
+                    Byron S. Gottfried
                   </span>
                 </h5>
               </div>
@@ -141,18 +141,18 @@ const NewArrivals = () => {
           </SwiperSlide>          
         {/* slider -5*/}
           <SwiperSlide>
-            <div className="relative p-6 lg:p-12 shadow-2xl rounded-md text-center flex flex-col items-center space-y-12 bg-gradient-to-bl from-[#ffffff] via-[#cef6ef30] to-[#e5dbff]">
+            <div className="relative p-6 lg:p-12 shadow-2xl rounded-md text-center flex flex-col items-center space-y-12 bg-gradient-to-bl from-light-background to-light-secondary">
               <div className="shadow-xl rounded-xl ">
                 <img className="w-56 p-2" src={img5} alt="" />
               </div>
               <div className="content">
-                <h3 className="hind-siliguri lg:text-2xl rounded-xl font-bold text-[#1F2937] text-center">
-                  সেরা সাত সায়েন্স ফিকশন
+                <h3 className="font-primary text-xl md:text-2xl font-semibold text-light-text  text-center">
+                  The Invisible Man
                 </h3>
-                <h5 className="lg:text-[18px] pt-3 font-medium">
-                  By 
-                  <span className="hind-siliguri mx-2 font-bold text-blue-600">
-                   হুমায়ূন আহমেদ
+                <h5 className=" lg:text-[18px] pt-3 font-medium">
+                  By
+                  <span className="ml-2 font-secondary font-bold text-light-text">
+                    H. G. Wells
                   </span>
                 </h5>
               </div>
@@ -160,37 +160,37 @@ const NewArrivals = () => {
           </SwiperSlide>       
          {/* slider -6*/}
           <SwiperSlide>
-            <div className="relative p-6 lg:p-12 shadow-2xl rounded-md text-center flex flex-col items-center space-y-12 bg-gradient-to-bl from-[#ffffff] via-[#cef6ef30] to-[#e5dbff]">
+            <div className="relative p-6 lg:p-12 shadow-2xl rounded-md text-center flex flex-col items-center space-y-12 bg-gradient-to-bl from-light-background to-light-secondary">
               <div className="shadow-xl rounded-xl ">
                 <img className="w-56 p-2" src={img6} alt="" />
               </div>
               <div className="content">
-                <h3 className="hind-siliguri lg:text-2xl rounded-xl font-bold text-[#1F2937] text-center">
-                  ডিটেকটিভ রাহাদ
+                <h3 className="font-primary text-xl md:text-2xl font-semibold text-light-text  text-center">
+                  The Most Powerful Success Series
                 </h3>
-                <h5 className="lg:text-[18px] pt-3 font-medium">
-                  By 
-                  <span className="hind-siliguri mx-2 font-bold text-blue-600">
-                   আল আমিন
+                <h5 className="lg:text-[18px] pt-3 font-medium ">
+                  By
+                  <span className="ml-2 font-secondary text-light-text">
+                    Dale Carnegie
                   </span>
                 </h5>
               </div>
             </div>
           </SwiperSlide>         
-        {/* slider -6*/}
+        {/* slider -7*/}
           <SwiperSlide>
-            <div className="relative p-6 lg:p-12 shadow-2xl rounded-md text-center flex flex-col items-center space-y-12 bg-gradient-to-bl from-[#ffffff] via-[#cef6ef30] to-[#e5dbff]">
+            <div className="relative p-6 lg:p-12 shadow-2xl rounded-md text-center flex flex-col items-center space-y-12 bg-gradient-to-bl from-light-background to-light-secondary">
               <div className="shadow-xl rounded-xl ">
                 <img className="w-56 p-2" src={img7} alt="" />
               </div>
               <div className="content">
-                <h3 className="hind-siliguri lg:text-2xl rounded-xl font-bold text-[#1F2937] text-center">
-                  প্রথম প্রহর
+                <h3 className=" font-primary text-xl md:text-2xl font-semibold text-light-text  text-center">
+                  As A Man Thinketh
                 </h3>
                 <h5 className="lg:text-[18px] pt-3 font-medium">
-                  By 
-                  <span className="hind-siliguri mx-2 font-bold text-blue-600">
-                   হুমায়ূন আহমেদ
+                  By
+                  <span className="ml-2 font-secondary font-bold text-light-text">
+                    James Allen
                   </span>
                 </h5>
               </div>
