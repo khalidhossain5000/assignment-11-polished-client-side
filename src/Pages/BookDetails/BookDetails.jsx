@@ -195,14 +195,14 @@ const BookDetails = () => {
         // style={customStyles}
         contentLabel="Example Modal"
         overlayClassName="fixed inset-0 bg-black/30 flex justify-center items-center"
-        className="m-2 lg:m-0 lg:w-8/12 bg-gradient-to-br from-[#dfd4ff] via-[#ab8ef6] to-[#fdeaf7] lg:h-8/12 p-6 lg:p-12 rounded-xl shadow-2xl relative"
+        className="m-2 lg:m-0 md:w-6/12 md:h-6/12 lg:w-9/12 bg-light-primary lg:h-9/12 p-6 lg:p-12 rounded-xl shadow-xl relative"
       >
-        <h1 className="md:text-3xl lg:text-5xl font-bold text-[#1f2937] text-center">
+        <h1 className="font-secondary text-light-text text-sm md:text-xl lg:text-3xl font-bold text-center">
           Select A Return Date To Borrow A Book
         </h1>
         <button
           onClick={closeModal}
-          className="btn btn-sm lg:btn-lg btn-error text-black font-bold absolute top-0 right-0"
+          className="btn btn-sm lg:btn-lg bg-light-text text-light-background font-bold absolute top-0 right-0"
         >
           X
         </button>
@@ -215,19 +215,19 @@ const BookDetails = () => {
             // value={new Date()}
             selected={returnDate}
             placeholderText="Select a Return Date"
-            className="lg:w-full lg:py-3 text-white px-5 lg:text-xl lg:font-bold bg-[#1571b5] rounded-xl"
+            className="lg:w-full lg:py-3 text-light-background px-5 lg:text-xl lg:font-bold bg-light-text rounded-xl"
           />
         </div>
         <div className="mx-auto text-center space-y-6 mt-6">
           <input
-            className="input lg:w-9/12 mx-auto shadow-2xl bg-[#1571b5] backdrop-blur-sm text-pink-100 border-2 border-cyan-300 py-7 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 text-xl focus:shadow-2xl focus:shadow-cyan-300"
+            className="input lg:w-9/12 mx-auto shadow-2xl bg-light-text backdrop-blur-sm text-light-background placeholder:bg-light-background border-2 py-7 placeholder:text-[17px] text-xl focus:shadow-2xl focus:shadow-light-text"
             type="text"
             name=""
             defaultValue={user?.displayName}
             readOnly
           />
           <input
-            className="input lg:w-9/12 mx-auto shadow-2xl bg-[#1571b5] backdrop-blur-sm text-pink-100 border-2 border-cyan-300 py-7 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 text-xl focus:shadow-2xl focus:shadow-cyan-300"
+            className="input lg:w-9/12 mx-auto shadow-2xl bg-light-text backdrop-blur-sm text-light-background placeholder:bg-light-background border-2 py-7 placeholder:text-[17px] text-xl focus:shadow-2xl focus:shadow-light-text"
             type="email"
             name=""
             defaultValue={user?.email}
@@ -238,7 +238,7 @@ const BookDetails = () => {
           onClick={handleBorrowBook}
           type="submit"
           value="Submit"
-           className="w-9/12 bg-gradient-to-tr from-[#C3DDFD] to-[#FFF9C4] hover:from-[#d6f0ff] hover:to-[#dbcdff] hover:text-black text-xl text-black font-bold py-3 px-6 rounded-md shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer disabled:cursor-not-allowed disabled:bg-red-800 disabled:from-transparent disabled:via-transparent disabled:to-transparent disabled:text-white"
+           className="bg-light-text px-3 py-4 md:px-9 md:py-4 rounded-sm font-secondary font-semibold font-light-text text-md lg:text-xl hover:scale-105 hover:shadow-xl hover:shadow-light-secondary transition duration-300 cursor-pointer text-light-background w-6/12 lg:mx-auto mx-2 md:mx-0"
         />
         </div>
         
