@@ -76,13 +76,13 @@ const AllBooks = () => {
                   className="bg-light-primary px-3 py-4 md:px-9 md:py-4 rounded-sm font-secondary font-semibold font-light-text text-md lg:text-xl hover:scale-110 hover:shadow-xl hover:shadow-light-secondary transition duration-300 cursor-pointer text-light-text mt-2 md:mt-3 md:w-10/12 mx-auto"
                   onChange={(e) => setView(e.target.value)}
                 >
-                  <option className="bg-light-text text-white" disabled={true}>
+                  <option className="bg-light-text text-light-background" disabled={true}>
                     Select Books View
                   </option>
-                  <option className="bg-light-text text-white" value="card">
+                  <option className="bg-light-text text-light-background" value="card">
                     Card View
                   </option>
-                  <option className="bg-light-text text-white" value="table">
+                  <option className="bg-light-text text-light-background" value="table">
                     Table View
                   </option>
                 </select>
@@ -92,7 +92,7 @@ const AllBooks = () => {
 
           {/* CARD VIEW CONTAINER  */}
           {view == "card" && (
-            <div className="mt-6 lg:mt-0 shadow-sm rounded-md px-2 lg:w-[80%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3 ">
+            <div className="mt-6 lg:mt-0 rounded-md px-2 lg:w-[80%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-9 ">
               {allBooks.map((book) => (
                 <AllBooksCard key={book._id} book={book}></AllBooksCard>
               ))}
