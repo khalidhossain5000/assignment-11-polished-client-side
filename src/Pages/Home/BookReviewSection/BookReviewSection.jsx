@@ -6,6 +6,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import Loading from "../../../Components/Loading/Loading";
+import Rating from "react-rating";
+import { FaRegStar, FaStar } from "react-icons/fa";
 const BookReviewSection = () => {
   const { user } = useAuth();
 
@@ -18,16 +20,18 @@ const BookReviewSection = () => {
 
       return res.data;
     },
-    enabled: !!user?.email,    
+    enabled: !!user?.email,
   });
 
-  console.log(data,isLoading);
+  console.log(data, isLoading);
   if (isLoading) return <Loading />;
   return (
     <div className="py-24 relative z-0">
-      <h2 className="text-center text-3xl font-bold py-12">All Publishers</h2>
+      <h2 className="text-xl md:text-2xl lg:text-5xl font-primary text-light-text font-bold md:font-extrabold text-center pb-9 md:pb-16">
+        Book Review
+      </h2>
 
-      <div className="my-8 px-4">
+      <div className="my-8 md:my-12 px-4">
         <Swiper
           modules={[Autoplay]}
           spaceBetween={20}
@@ -44,14 +48,40 @@ const BookReviewSection = () => {
         >
           {data?.map((review) => (
             <SwiperSlide key={review._id}>
-              <div className="publisher-card bg-white shadow-md rounded-lg flex flex-col items-center p-4 gap-2">
-                <img
-                  src={review?.imageUrl}
-                  alt={review.name}
-                  className="w-20 h-20 object-contain"
-                />
-                <h2 className="text-center font-semibold">{review?.title}</h2>
-                <h2 className="text-center font-semibold">{review?.rating}</h2>
+              <div className="publisher-card bg-light-secondary shadow-md rounded-md flex flex-col items-center p-4 gap-2">
+                <div className="flex-1 w-full">
+                  <img
+                    src={review?.imageUrl}
+                    alt={review.name}
+                    className="w-20 h-20 md:w-4/12 md:h-36 mx-auto "
+                  />
+                </div>
+                <div>
+                  <h2 className="font-secondary text-light-text text-sm md:text-xl lg:text-3xl font-bold py-3 md:pt-6 text-center">
+                    {review?.title}
+                  </h2>
+                  
+                  <div className="rtign text-center flex items-center gap-2">
+                    <h2 className="font-secondary text-light-text text-sm md:text-xl lg:text-xl font-bold md:mb-2">
+                    Rating
+                  </h2>
+                    <Rating
+                      initialRating={review?.rating}
+                      emptySymbol={
+                        <FaRegStar className="text-xl text-light-primary" />
+                      }
+                      fullSymbol={
+                        <FaStar className="text-xl text-light-primary" />
+                      }
+                      fractions={2}
+                      readonly
+                    />
+                  </div>
+                   <h2 className="font-secondary text-light-text text-sm md:text-xl lg:text-xl font-bold md:mb-2">
+                    By : {review?.reviewerName}
+                  </h2>
+
+                </div>
               </div>
             </SwiperSlide>
           ))}
