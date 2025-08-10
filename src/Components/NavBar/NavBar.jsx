@@ -119,12 +119,6 @@ const NavBar = () => {
           <NavLink to="/admin-dashboard">Admin Dashboard</NavLink>
         </li>
       )}
-
-      {user && (
-        <li>
-          <NavLink to="my-profile">My Profile</NavLink>
-        </li>
-      )}
     </>
   );
   return (

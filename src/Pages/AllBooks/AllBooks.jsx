@@ -41,50 +41,48 @@ const AllBooks = () => {
     setAllBooks(availableBooks);
   };
   return (
-    <div className="py-12 lg:py-24 relative border-t border-t-blue-300">
+    <div className="py-12 lg:py-24 relative bg-light-background">
       <div className="d-title">
         <Helmet>
           <title>All-Books</title>
         </Helmet>
       </div>
-      <div className="absolute top-0 -z-10 h-full w-full bg-white">
-        <div className="absolute bottom-auto left-auto right-0 top-0 h-[500px] w-[500px] -translate-x-[30%] translate-y-[20%] rounded-full bg-[rgba(173,109,244,0.5)] opacity-50 blur-[80px]"></div>
-      </div>
+     
 
-      <h2 className=" text-6xl font-bold text-center text-[#1F2937]">
+      <h2 className="text-xl md:text-2xl lg:text-5xl font-primary text-light-text font-bold md:font-extrabold text-center py-9 md:py-16">
         All Books : {allBooks.length}
       </h2>
 
       {/* filter sidebar */}
       <section className="z-50">
-        <section className="lg:flex items-start filter-container container mx-auto py-12 lg:py-24 gap-6 md:gap-3 lg:gap-6 md:px-2 lg:px-0">
-          <div className="lg:w-[20%] self-start bg-[#ffffff] shadow-2xl rounded-4xl">
+        <section className="lg:flex items-start filter-container container mx-auto py-6 lg:py-16 gap-6 md:gap-3 lg:gap-6 md:px-2 lg:px-0">
+          <div className="lg:w-[20%] self-start bg-light-secondary md:p-2 shadow-xl rounded-md shadow-light-secondary">
             <aside className="text-center mt-12 md:p-2 lg:p-0 p-0">
               <div className="py-3 md:pb-6 border-b-3 border-b-gray-300">
-                <h1 className="text-xl lg:text-3xl font-bold text-[#1f2937">
+                <h1 className="text-xl md:text-2xl lg:text-4xl font-primary text-light-text font-bold md:font-extrabold text-center">
                   Filter Options
                 </h1>
               </div>
               <div className="filtered pt-6 border-b-2 border-blue-100 pb-6 lg:pb-9 md:flex flex-col lg:block md:px-6 lg:px-0">
                 <button
                   onClick={handleFilterBooks}
-                  className="btn bg-gradient-to-tr from-[#C3DDFD] to-[#FFF9C4] hover:from-[#d6f0ff] hover:to-[#dbcdff] hover:text-black py-4 lg:py-6 rounded-xl shadow-xl btn-bold lg:text-xl text-black"
+                  className="bg-light-primary px-3 py-4 md:px-9 md:py-4 rounded-sm font-secondary font-semibold font-light-text text-md lg:text-xl hover:scale-110 hover:shadow-xl hover:shadow-light-secondary transition duration-300 cursor-pointer text-light-text"
                 >
                   Show Available Books
                 </button>
                 {/* select  VIEW*/}
                 <select
                   defaultValue="Card View"
-                  className="bg-gradient-to-tr from-[#C3DDFD] to-[#FFF9C4] p-2 border border-pink-100 rounded-xl shadow-xl btn-bold lg:text-xl text-black mt-6 md:w-full lg:w-9/12 font-bold"
+                  className="bg-light-primary px-3 py-4 md:px-9 md:py-4 rounded-sm font-secondary font-semibold font-light-text text-md lg:text-xl hover:scale-110 hover:shadow-xl hover:shadow-light-secondary transition duration-300 cursor-pointer text-light-text mt-2 md:mt-3 md:w-10/12 mx-auto"
                   onChange={(e) => setView(e.target.value)}
                 >
-                  <option className="bg-cyan-800 text-white" disabled={true}>
+                  <option className="bg-light-text text-white" disabled={true}>
                     Select Books View
                   </option>
-                  <option className="bg-cyan-800 text-white" value="card">
+                  <option className="bg-light-text text-white" value="card">
                     Card View
                   </option>
-                  <option className="bg-cyan-800 text-white" value="table">
+                  <option className="bg-light-text text-white" value="table">
                     Table View
                   </option>
                 </select>
