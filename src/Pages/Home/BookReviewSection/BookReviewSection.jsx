@@ -27,7 +27,7 @@ const BookReviewSection = () => {
   if (isLoading) return <Loading />;
   return (
     <div className="py-24 relative z-0">
-      <h2 className="text-xl md:text-2xl lg:text-5xl font-primary text-light-text font-bold md:font-extrabold text-center pb-9 md:pb-16">
+      <h2 className="text-xl md:text-2xl lg:text-5xl font-primary text-light-text font-bold md:font-extrabold text-center pb-9 md:pb-16 dark:text-dark-text">
         Book Review
       </h2>
 
@@ -48,7 +48,7 @@ const BookReviewSection = () => {
         >
           {data?.map((review) => (
             <SwiperSlide key={review._id}>
-              <div className="publisher-card bg-light-secondary shadow-md rounded-md flex flex-col items-center p-4 gap-2">
+              <div className="publisher-card bg-light-secondary dark:bg-dark-secondary shadow-md rounded-md flex flex-col items-center p-4 gap-2">
                 <div className="flex-1 w-full">
                   <img
                     src={review?.imageUrl}
@@ -57,12 +57,12 @@ const BookReviewSection = () => {
                   />
                 </div>
                 <div>
-                  <h2 className="font-secondary text-light-text text-sm md:text-xl lg:text-3xl font-bold py-3 md:pt-6 text-center">
+                  <h2 className="font-secondary text-light-text text-sm md:text-xl lg:text-3xl font-bold py-3 md:pt-6 text-center dark:text-dark-text">
                     {review?.title}
                   </h2>
                   
                   <div className="rtign text-center flex items-center gap-2">
-                    <h2 className="font-secondary text-light-text text-sm md:text-xl lg:text-xl font-bold md:mb-2">
+                    <h2 className="font-secondary text-light-text text-sm md:text-xl lg:text-xl font-bold md:mb-2 dark:text-dark-text">
                     Rating
                   </h2>
                     <Rating

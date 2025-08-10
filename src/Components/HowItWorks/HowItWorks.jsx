@@ -30,20 +30,20 @@ const HowItWorks = () => {
 
   return (
     <div className="py-12 md:py-24 ">
-      <h1 className="text-xl md:text-2xl lg:text-5xl font-primary text-light-text font-bold md:font-extrabold text-center pb-9 md:pb-16">
+      <h1 className="text-xl md:text-2xl lg:text-5xl font-primary text-light-text font-bold md:font-extrabold text-center pb-9 md:pb-16 dark:text-dark-text">
         How It Works
       </h1>
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {/* card-1 */}
         {howItWorksSteps.map((works, i) => (
           <div key={i} className="p-3 md:p-5 lg:p-6">
-            <h1 className="font-primary text-2xl md:text-4xl lg:text-7xl font-bold text-light-text">
+            <h1 className="font-primary text-2xl md:text-4xl lg:text-7xl font-bold text-light-text dark:text-dark-text">
               {i + 1}
             </h1>
-            <h3 className="pt-2 md:pt-5 md:w-9/12 font-secondary text-light-text text-sm md:text-xl lg:text-3xl font-bold">
+            <h3 className="pt-2 md:pt-5 md:w-9/12 font-secondary text-light-text text-sm md:text-xl lg:text-3xl font-bold dark:text-dark-text">
               {works.title}
             </h3>
-            <p className="py-2 md:py-4 font-secondary text-light-text text-sm lg:text-xl ">
+            <p className="dark:text-dark-text py-2 md:py-4 font-secondary text-light-text text-sm lg:text-xl ">
               {works.description}
             </p>
           </div>

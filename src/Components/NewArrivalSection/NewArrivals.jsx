@@ -20,12 +20,12 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 const NewArrivals = () => {
   return (
-    <div className="bg-light-secondary py-12 lg:py-24 border-t border-t-light-primary">
-      <h1 className="text-xl md:text-2xl lg:text-5xl font-primary text-light-text font-bold md:font-extrabold text-center pb-3">
+    <div className="bg-light-secondary dark:bg-dark-secondary py-12 lg:py-24 border-t border-t-light-primary dark:border-t-dark-secondary">
+      <h1 className="text-xl md:text-2xl lg:text-5xl font-primary text-light-text font-bold md:font-extrabold text-center pb-3 dark:text-dark-text">
         New Arrivals
       </h1>
 
-      <h5 className="text-xl md:text-2xl font-secondary font-semibold text-light-text text-center py-3 mb-6 lg:mb-12">
+      <h5 className="dark:text-dark-text text-xl md:text-2xl font-secondary font-semibold text-light-text text-center py-3 mb-6 lg:mb-12">
         Check out the newest books just added to our library!
       </h5>
       <div className="container mx-auto py-12 md:pt-22">
@@ -65,17 +65,17 @@ const NewArrivals = () => {
         >
           {/* slider -1 */}
           <SwiperSlide>
-            <div className="relative p-6 lg:p-12 shadow-2xl rounded-md text-center flex flex-col items-center space-y-12 bg-gradient-to-bl from-light-background to-light-secondary">
+            <div className="relative p-6 lg:p-12 shadow-2xl rounded-md text-center flex flex-col items-center space-y-12 bg-gradient-to-bl from-light-background to-light-secondary ">
               <div className="shadow-xl rounded-xl ">
                 <img className="w-56 p-2" src={img1} alt="" />
               </div>
               <div className="content">
-                <h3 className="font-primary text-xl md:text-2xl font-semibold text-light-text  text-center">
+                <h3 className="font-primary text-xl md:text-2xl font-semibold text-light-text  text-center dark:text-dark-text">
                   Neuromancer (Sprawl Trilogy)
                 </h3>
-                <h5 className=" lg:text-[18px] pt-3 font-medium">
+                <h5 className=" lg:text-[18px] pt-3 font-medium dark:text-dark-text">
                   By
-                  <span className="ml-2 font-secondary font-bold text-light-text">
+                  <span className="ml-2 font-secondary font-bold text-light-text dark:text-dark-text">
                     William Gibson
                   </span>
                 </h5>
@@ -89,12 +89,12 @@ const NewArrivals = () => {
                 <img className="w-56 p-2" src={img2} alt="" />
               </div>
               <div className="content">
-                <h3 className="font-primary text-xl md:text-2xl font-semibold text-light-text  text-center">
+                <h3 className="font-primary text-xl md:text-2xl font-semibold text-light-text  text-center dark:text-dark-text">
                   A Beginner's Guide To Data Science
                 </h3>
-                <h5 className=" lg:text-[18px] pt-3 font-medium">
+                <h5 className=" lg:text-[18px] pt-3 font-medium dark:text-dark-text">
                   By
-                  <span className="ml-2 font-secondary font-bold text-light-text">
+                  <span className="ml-2 font-secondary font-bold text-light-text dark:text-dark-text">
                     Enamul Haque
                   </span>
                 </h5>
@@ -108,12 +108,12 @@ const NewArrivals = () => {
                 <img className="w-56 p-2" src={img3} alt="" />
               </div>
               <div className="content">
-                <h3 className="font-primary text-xl md:text-2xl font-semibold text-light-text  text-center">
+                <h3 className="font-primary text-xl md:text-2xl font-semibold text-light-text  text-center dark:text-dark-text">
                   Famous Science Fiction
                 </h3>
-                <h5 className="lg:text-[18px] pt-3 font-medium">
+                <h5 className="lg:text-[18px] pt-3 font-medium dark:text-dark-text">
                   By
-                  <span className="ml-2 font-secondary font-bold text-light-text">
+                  <span className="ml-2 font-secondary dark:text-dark-text font-bold text-light-text">
                     Book Club
                   </span>
                 </h5>
@@ -127,12 +127,12 @@ const NewArrivals = () => {
                 <img className="w-56 p-2" src={img4} alt="" />
               </div>
               <div className="content">
-                <h3 className="font-primary text-xl md:text-2xl font-semibold text-light-text  text-center">
+                <h3 className="font-primary dark:text-dark-text text-xl md:text-2xl font-semibold text-light-text  text-center">
                   Schaum's Outline of Programming with C
                 </h3>
-                <h5 className="lg:text-[18px] pt-3 font-medium">
+                <h5 className="lg:text-[18px] pt-3 font-medium dark:text-dark-text">
                   By
-                  <span className="ml-2 font-secondary font-bold text-light-text">
+                  <span className="ml-2 font-secondary font-bold dark:text-dark-text text-light-text">
                     Byron S. Gottfried
                   </span>
                 </h5>
@@ -146,12 +146,12 @@ const NewArrivals = () => {
                 <img className="w-56 p-2" src={img5} alt="" />
               </div>
               <div className="content">
-                <h3 className="font-primary text-xl md:text-2xl font-semibold text-light-text  text-center">
+                <h3 className="font-primary text-xl md:text-2xl font-semibold text-light-text  text-center dark:text-dark-text">
                   The Invisible Man
                 </h3>
-                <h5 className=" lg:text-[18px] pt-3 font-medium">
+                <h5 className=" lg:text-[18px] pt-3 font-medium dark:text-dark-text">
                   By
-                  <span className="ml-2 font-secondary font-bold text-light-text">
+                  <span className="ml-2 font-secondary font-bold dark:text-dark-text text-light-text">
                     H. G. Wells
                   </span>
                 </h5>
@@ -165,12 +165,12 @@ const NewArrivals = () => {
                 <img className="w-56 p-2" src={img6} alt="" />
               </div>
               <div className="content">
-                <h3 className="font-primary text-xl md:text-2xl font-semibold text-light-text  text-center">
+                <h3 className="font-primary text-xl md:text-2xl font-semibold text-light-text  text-center dark:text-dark-text">
                   The Most Powerful Success Series
                 </h3>
-                <h5 className="lg:text-[18px] pt-3 font-medium ">
+                <h5 className="lg:text-[18px] pt-3 font-medium dark:text-dark-text">
                   By
-                  <span className="ml-2 font-secondary text-light-text">
+                  <span className="ml-2 font-secondary text-light-text dark:text-dark-text">
                     Dale Carnegie
                   </span>
                 </h5>
@@ -184,12 +184,12 @@ const NewArrivals = () => {
                 <img className="w-56 p-2" src={img7} alt="" />
               </div>
               <div className="content">
-                <h3 className=" font-primary text-xl md:text-2xl font-semibold text-light-text  text-center">
+                <h3 className=" font-primary text-xl md:text-2xl font-semibold text-light-text  text-center dark:text-dark-text">
                   As A Man Thinketh
                 </h3>
-                <h5 className="lg:text-[18px] pt-3 font-medium">
+                <h5 className="lg:text-[18px] pt-3 font-medium dark:text-dark-text">
                   By
-                  <span className="ml-2 font-secondary font-bold text-light-text">
+                  <span className="ml-2 font-secondary font-bold text-light-text dark:text-dark-text">
                     James Allen
                   </span>
                 </h5>

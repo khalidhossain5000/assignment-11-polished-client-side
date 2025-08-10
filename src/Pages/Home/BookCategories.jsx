@@ -14,23 +14,23 @@ const BookCategories = () => {
 
   return (
     <div className="container mx-auto py-12 md:py-24">
-      <h1 className="text-xl md:text-2xl lg:text-5xl font-primary text-light-text font-bold md:font-extrabold text-center pb-9 md:pb-16">Book Categorites</h1>
+      <h1 className="text-xl md:text-2xl lg:text-5xl font-primary text-light-text dark:text-dark-text font-bold md:font-extrabold text-center pb-9 md:pb-16">Book Categorites</h1>
 
       <div className="py-3 md:py-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6">
         {
           categories.map((cat,i)=><div 
           key={i}
-          className="shadow-2xl h-full flex flex-col justify-between pb-3 md:pb-6">
+          className="shadow-2xl h-full flex flex-col justify-between pb-3 md:pb-6 bg-dark-secondary dark:shadow-dark-primary dark:shadow-sm">
               <div className="igms rounded-t-xl w-full">
                 <img src={cat.image} className="h-full rounded-t-xl w-full" alt="" />
               </div>
               <div className="contetns p-2 md:p-5">
-                <h2 className="font-secondary text-light-text text-sm md:text-xl lg:text-3xl font-bold">{cat.name}</h2>
-                <p className="py-2 md:py-4 font-secondary text-light-text text-sm lg:text-xl ">{cat.des}</p>
+                <h2 className="font-secondary text-light-text dark:text-dark-text text-sm md:text-xl lg:text-3xl font-bold">{cat.name}</h2>
+                <p className="py-2 md:py-4 font-secondary text-light-text dark:text-dark-text text-sm lg:text-xl ">{cat.des}</p>
               </div>
               <div className="text-center">
                 <Link to={`/book-categories/${cat.name.toLocaleLowerCase()}`}>
-                  <button className="cursor-pointer hover:scale-105 hover:border-b-light-primary transition duration-300 text-sm md:text-xl lg:text-2xl text-center font-secondary text-light-text font-bold border-b-2 border-b-light-secondary">See More</button>
+                  <button className="cursor-pointer hover:scale-105 hover:border-b-light-primary transition duration-300 text-sm md:text-xl lg:text-2xl text-center font-secondary text-light-text font-bold border-b-2 border-b-light-secondary dark:text-dark-text ">See More</button>
                 </Link>
               </div>
             </div>
