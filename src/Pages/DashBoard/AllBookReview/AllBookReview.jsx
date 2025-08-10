@@ -41,22 +41,20 @@ const AllBookReview = () => {
     }
   };
   return (
-    <div className="py-12 ">
-      <div className="px-12 w-full lg:w-11/12 mx-auto rounded-2xl shadow-xl h-48 bg-gradient-to-tr from-[#F4F6FE] via-[#E0E2F0] to-[#D4D7E3] flex items-center justify-center relative overflow-hidden ">
+    <div className=" ">
+      <div className="px-12 w-full  mx-auto rounded-2xl shadow-xl h-48 bg-light-background flex items-center justify-center relative overflow-hidden ">
         <div className="text-center px-4">
-          <h1 className="text-[#211F54] text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
+          <h1 className="text-xl md:text-2xl lg:text-4xl font-primary text-light-text font-bold md:font-extrabold text-center">
             All Book Review
           </h1>
         </div>
-        {/* Subtle overlay shapes in primary text color */}
-        <div className="absolute top-0 right-0 w-32 h-32 bg-[#211F54] opacity-10 rounded-full transform translate-x-1/3 -translate-y-1/3"></div>
-        <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#211F54] opacity-10 rounded-full transform -translate-x-1/2 translate-y-1/2"></div>
+       
       </div>
-      <div className="overflow-x-auto rounded-box border border-gray-500 p-6 bg-white max-w-7xl mx-auto mt-6 lg:mt-12">
+      <div className="overflow-x-auto rounded-box border border-light-primary p-6 bg-light-secondary container mx-auto mt-6 lg:mt-12">
         <table className="table">
           {/* head */}
           <thead>
-            <tr className="text-2xl text-[#211f54] rancho border-b border-b-gray-300 ">
+            <tr className="text-xl md:text-2xl text-light-text rancho border-b border-b-light-primary ">
               <th>#</th>
               <th>Book Image</th>
               <th>Book Name</th>
@@ -73,39 +71,39 @@ const AllBookReview = () => {
             {/* row 1 */}
             {data.map((review, i) => (
               <tr key={i} className="">
-                <th className="border-b border-gray-300">{i + 1}</th>
-                <td className="border-b border-gray-300">
+                <th className="border-b border-light-primary">{i + 1}</th>
+                <td className="border-b border-light-primary">
                   <img
                     src={review?.imageUrl}
                     alt={review?.name}
                     className="w-12 h-12 rounded-full"
                   />
                 </td>
-                <td className="text-xs md:text-[17px] urbanist font-medium text-gray-800 border-b border-gray-300">
+                <td className="text-xs md:text-[17px] urbanist font-medium text-light-text border-b border-light-primary">
                   {review?.title}
                 </td>
-                <td className="text-xs md:text-[17px] urbanist font-medium text-gray-800 border-b border-gray-300">
+                <td className="text-xs md:text-[17px] urbanist font-medium text-light-text border-b border-light-primary">
                   {review?.author}
                 </td>
-                <td className="text-xs md:text-[19px] urbanist font-bold text-gray-800 border-b border-gray-300">
+                <td className="text-xs md:text-[19px] urbanist font-bold text-light-text border-b border-light-primary">
                   {review?.category}
                 </td>
-                <td className="text-xs md:text-[19px] urbanist font-bold text-gray-800 border-b border-gray-300">
+                <td className="text-xs md:text-[19px] urbanist font-bold text-light-text border-b border-light-primary">
                   {review?.rating}
                 </td>
 
-                <td className="text-xs md:text-[19px] urbanist font-bold text-gray-800 border-b border-gray-300">
+                <td className="text-xs md:text-[19px] urbanist font-bold text-light-text border-b border-light-primary">
                   {review?.reviewerName}
                 </td>
 
-                <td className="text-xs md:text-[19px] urbanist font-bold text-gray-800 border-b border-gray-300">
+                <td className="text-xs md:text-[19px] urbanist font-bold text-light-text border-b border-light-primary">
                   {review?.reviewerEmail}
                 </td>
 
-                <td className="text-xs md:text-[19px] urbanist font-bold text-gray-800 border-b border-gray-300">
+                <td className="text-xs md:text-[19px] urbanist font-bold text-light-text border-b border-light-primary">
                   {review?.status}
                 </td>
-                <td className="text-xs md:text-[19px] urbanist font-bold text-gray-800 border-b border-gray-300">
+                <td className="text-xs md:text-[19px] urbanist font-bold text-light-text border-b border-light-primary">
                   <button
                     onClick={() => handleStatus(review?._id)}
                     className="btn btn-sm btn-success"

@@ -24,7 +24,7 @@ const AdminDashBoard = () => {
       <li>
         <NavLink
           className="hover:bg-[#19191e] hover:p-2 hover:rounded-md"
-          to="/all-users"
+          to="/admin-dashboard"
           onClick={handleDrawerClose}
         >
           <FaUserLarge className="text-xl mr-1" /> All Users
