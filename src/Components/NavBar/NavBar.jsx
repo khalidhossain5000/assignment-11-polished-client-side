@@ -3,8 +3,10 @@ import { NavLink } from "react-router";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
 import logo from "../../assets/logo/librarycloudlogo.png";
+import useRole from "../../Hooks/userRole";
 const NavBar = () => {
   const { user, logOutUser } = useAuth();
+  const { role, roleLoading } = useRole();
 
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") === "light" ? "light" : "dark"
@@ -38,23 +40,23 @@ const NavBar = () => {
       });
     });
   };
-// sticky code statd
+  // sticky code statd
   const [isSticky, setIsSticky] = useState(false);
-useEffect(() => {
+  useEffect(() => {
     // handler: set sticky if scrolled more than 50px
     const onScroll = () => {
       setIsSticky(window.scrollY > 50);
     };
 
     // use passive listener for better scroll performance
-    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener("scroll", onScroll, { passive: true });
 
     // run once to set initial state (if page opened not at top)
     onScroll();
 
-    return () => window.removeEventListener('scroll', onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
-// sticky code ends
+  // sticky code ends
   const links = (
     <>
       <li>
@@ -81,6 +83,7 @@ useEffect(() => {
           Add Book{" "}
         </NavLink>
       </li>
+
       <li>
         <NavLink
           to="/borrowed-books/:email"
@@ -90,63 +93,80 @@ useEffect(() => {
         </NavLink>
       </li>
 
-      
+      <li>
+        <NavLink
+          to="/add-book-review"
+          className="hover:text-[#01180195] transition duration-300 text-sm md:text-[17px]"
+        >
+          Add Book Review
+        </NavLink>
+      </li>
+
+      {!roleLoading && role === "admin" && (
+        <li>
+          <NavLink to="/admin-dashboard">Admin Dashboard</NavLink>
+        </li>
+      )}
+
+      {user && (
+        <li>
+          <NavLink to="my-profile">My Profile</NavLink>
+        </li>
+      )}
     </>
   );
   return (
-    <div className={
+    <div
+      className={
         `font-secondary shadow-xl fixed top-0 z-50 w-full transition-all duration-300 ease-out ` +
         (isSticky
-          ? 'bg-[#f9fff990] backdrop-blur-md shadow-sm'
-          : 'bg-light-background')
-      }>
-
+          ? "bg-[#f9fff990] backdrop-blur-md shadow-sm"
+          : "bg-light-background")
+      }
+    >
       <div className="navbar container mx-auto">
-
         <div className="navbar-start flex-1  flex justify-between md:justify-start">
-        {/* mobile menu */}
-        <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+          {/* mobile menu */}
+          <div className="dropdown">
+            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                {" "}
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />{" "}
+              </svg>
+            </div>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
-              {" "}
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              />{" "}
-            </svg>
+              {links}
+            </ul>
           </div>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
-          >
-            {links}
-          </ul>
-        </div>
-        <div className="">
+          <div className="">
             <img
               className="max-w-[120px] lg:max-w-[150px]"
               src={logo}
               alt="library-cloud-logo"
             />
           </div>
-      </div>
+        </div>
 
-      <div className="navbar-center hidden lg:flex flex-1 lg:whitespace-nowrap">
-        <ul className="flex items-center gap-3 font-bold px-1">
-          {links}
-        </ul>
-      </div>
+        <div className="navbar-center hidden lg:flex flex-1 lg:whitespace-nowrap">
+          <ul className="flex items-center gap-3 font-bold px-1">{links}</ul>
+        </div>
 
-      <div className="navbar-end hidden md:flex flex-1">
-        {/* theme toggle start */}
+        <div className="navbar-end hidden md:flex flex-1">
+          {/* theme toggle start */}
           <label className="swap swap-rotate mr-3">
             {/* this hidden checkbox controls the state */}
             <input
@@ -177,52 +197,49 @@ useEffect(() => {
           </label>
 
           {/* theme toggle part ends here  */}
-        {user ? (
-        <>
-          <div
-            className="tooltip tooltip-bottom md:flex items-center gap-2"
-            data-tip={`${user.displayName}`}
-          >
-            <img
-              className="w-12 h-12 rounded-full cursor-pointer"
-              src={user.photoURL}
-              alt=""
-            />
-          <button
-            onClick={handleLogOut}
-            className="bg-light-primary text-light-text hover:scale-105 hover:shadow-2xl hover:shadow-light-secondary cursor-pointer transition duration-300 rounded-md px-5 py-3 md:px-7 md:py-3 lg:whitespace-nowrap font-secondary font-bold"
-          >
-            Sign Out
-          </button>
-          </div>
-        </>
-      ) : (
-        <>
-          <ul className="flex items-center gap-3">
-            <li>
-            <NavLink
-              to="/login"
-              className="bg-light-primary text-light-text hover:scale-105 hover:shadow-2xl hover:shadow-light-secondary cursor-pointer transition duration-300 rounded-md px-5 py-3 md:px-7 md:py-3 lg:whitespace-nowrap font-secondary font-bold"
-            >
-              Login{" "}
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/register"
-              className="bg-light-primary text-light-text hover:scale-110 hover:shadow-2xl hover:shadow-light-secondary cursor-pointer transition duration-300 rounded-md px-5 py-3 md:px-7 md:py-3 lg:whitespace-nowrap font-secondary font-bold"
-            >
-              Register{" "}
-            </NavLink>
-          </li>
-          </ul>
-        </>
-      )}
+          {user ? (
+            <>
+              <div
+                className="tooltip tooltip-bottom md:flex items-center gap-2"
+                data-tip={`${user.displayName}`}
+              >
+                <img
+                  className="w-12 h-12 rounded-full cursor-pointer"
+                  src={user.photoURL}
+                  alt=""
+                />
+                <button
+                  onClick={handleLogOut}
+                  className="bg-light-primary text-light-text hover:scale-105 hover:shadow-2xl hover:shadow-light-secondary cursor-pointer transition duration-300 rounded-md px-5 py-3 md:px-7 md:py-3 lg:whitespace-nowrap font-secondary font-bold"
+                >
+                  Sign Out
+                </button>
+              </div>
+            </>
+          ) : (
+            <>
+              <ul className="flex items-center gap-3">
+                <li>
+                  <NavLink
+                    to="/login"
+                    className="bg-light-primary text-light-text hover:scale-105 hover:shadow-2xl hover:shadow-light-secondary cursor-pointer transition duration-300 rounded-md px-5 py-3 md:px-7 md:py-3 lg:whitespace-nowrap font-secondary font-bold"
+                  >
+                    Login{" "}
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/register"
+                    className="bg-light-primary text-light-text hover:scale-110 hover:shadow-2xl hover:shadow-light-secondary cursor-pointer transition duration-300 rounded-md px-5 py-3 md:px-7 md:py-3 lg:whitespace-nowrap font-secondary font-bold"
+                  >
+                    Register{" "}
+                  </NavLink>
+                </li>
+              </ul>
+            </>
+          )}
+        </div>
       </div>
-
-      </div>
-
-
     </div>
   );
 };

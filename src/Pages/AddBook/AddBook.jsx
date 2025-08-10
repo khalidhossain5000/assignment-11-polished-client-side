@@ -1,8 +1,5 @@
 import React from "react";
-// import bgImg from "../../assets/AddUpdateBg/night-natures.jpg";-->more prefrable
-
 import bgImg from "../../assets/AddUpdateBg/lib-img-ii.jpg";
-
 import axios from "axios";
 import toast from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
@@ -20,7 +17,7 @@ const AddBook = () => {
 
     //data sending to db
     axios
-      .post("https://assignment-11-server-five-lake.vercel.app/books", data, {
+      .post("http://localhost:3000/books", data, {
         headers: {
           authorization: `Bearer ${user?.accessToken}`,
         },
@@ -37,7 +34,8 @@ const AddBook = () => {
             style: {
               border: "1px solid black",
               color: "white",
-              backgroundImage: "linear-gradient(to bottom right, #31c3df, #3a47d5)"
+              backgroundImage:
+                "linear-gradient(to bottom right, #31c3df, #3a47d5)",
             },
           });
         }
@@ -46,7 +44,6 @@ const AddBook = () => {
         console.log(error);
       });
   };
-
 
   return (
     <div>
@@ -89,7 +86,6 @@ const AddBook = () => {
                 <label className="label text-cyan-300 text-xl lg:text-2xl pb-3">
                   Book Image URL
                 </label>
-                <input type="file" name="image" accept="image/*" required />
                 <input
                   type="url"
                   name="imageUrl"
@@ -107,7 +103,7 @@ const AddBook = () => {
                 </label>
                 <input
                   type="number"
-                  min='0'
+                  min="0"
                   name="quantity"
                   className="input w-full shadow-2xl bg-[#31b8ea20] backdrop-blur-sm text-pink-100 border-2 border-cyan-300 py-7 placeholder:text-[17px] placeholder:text-white focus:border-cyan-500 text-xl focus:shadow-2xl focus:shadow-cyan-300"
                   placeholder="Max Members"
@@ -150,9 +146,9 @@ const AddBook = () => {
                   <option className="bg-cyan-900 ">
                     Computer & Programming
                   </option>
-                  <option className="bg-cyan-900 " >Science-Fiction</option>
-                  <option className="bg-cyan-900 " >Sports & Games</option>
-                  <option className="bg-cyan-900" >
+                  <option className="bg-cyan-900 ">Science-Fiction</option>
+                  <option className="bg-cyan-900 ">Sports & Games</option>
+                  <option className="bg-cyan-900">
                     Self-Development & Meditation
                   </option>
                 </select>

@@ -4,6 +4,7 @@ import bgImg from "../../assets/AuthBg/monutain-darsk.jpg"
 import toast from "react-hot-toast";
 import { AuthContext } from "../../Context/AuthContext";
 import { Helmet } from "react-helmet-async";
+import axios from "axios";
 
 const Register = () => {
   const { createUser, updateUserProfile, setUser, handleGoogleUser } =
@@ -11,6 +12,7 @@ const Register = () => {
   const [passwordError, setPasswordError] = useState("");
   const navigate = useNavigate();
   const registerLocation = useLocation();
+
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -32,6 +34,17 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const user = result.user;
+        // data sending to the DB START
+         const userInfo = {
+          name,
+          email,
+          role: "user", //default role
+          profilePic:photo,
+        };
+        axios.post("http://localhost:3000/users", userInfo)
+      .then(()=>alert("User Send to the db successfully"))
+      .catch((error)=>console.log(error))
+        // data sending to the DB ENDS
         //update profile here
         updateUserProfile({ displayName: name, photoURL: photo })
           .then(() => {

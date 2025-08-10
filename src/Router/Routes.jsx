@@ -12,6 +12,11 @@ import Loading from "../Components/Loading/Loading";
 import BookDetails from "../Pages/BookDetails/BookDetails";
 import UpdateBook from "../Pages/UpdateBookPage/UpdateBook";
 import ErrorPage from "../Pages/ErrorPageGlobal/ErrorPage";
+import AdminDashBoard from "../Pages/DashBoard/AdminDashBoard";
+import UserProfileDashBoard from "../Pages/DashBoard/UserProfileDashBoard";
+import AllUsers from "../Pages/DashBoard/AllUsers/AllUsers";
+import BookReviewForm from "../Pages/AddBookReview/BookReviewForm";
+import AllBookReview from "../Pages/DashBoard/AllBookReview/AllBookReview";
 
 export const router = createBrowserRouter([
   {
@@ -29,7 +34,6 @@ export const router = createBrowserRouter([
             <AllBooks></AllBooks>
           </PrivateRoute>
         ),
-        
       },
       {
         path: "all-books/:id",
@@ -38,7 +42,6 @@ export const router = createBrowserRouter([
             <BookDetails></BookDetails>
           </PrivateRoute>
         ),
-        
       },
       {
         path: "update-book/:id",
@@ -47,7 +50,6 @@ export const router = createBrowserRouter([
             <UpdateBook></UpdateBook>
           </PrivateRoute>
         ),
-        
       },
       {
         path: "add-books",
@@ -58,14 +60,20 @@ export const router = createBrowserRouter([
         ),
       },
       {
+        path: "add-book-review",
+        element: (
+          <PrivateRoute>
+            <BookReviewForm></BookReviewForm>
+          </PrivateRoute>
+        )
+      },
+      {
         path: "borrowed-books/:email",
         element: (
           <PrivateRoute>
             <BorrowedBooks></BorrowedBooks>
           </PrivateRoute>
         ),
-
-       
       },
       {
         path: "book-categories/:name",
@@ -85,6 +93,25 @@ export const router = createBrowserRouter([
         Component: Register,
       },
     ],
+  },
+  {
+    path: "admin-dashboard",
+    element: <AdminDashBoard></AdminDashBoard>,
+    children: [
+      {
+        index:true,
+        element: <AllUsers></AllUsers>,
+      },
+      {
+        path:'all-book-review',
+        element:<AllBookReview></AllBookReview>
+      }
+    ],
+  },
+
+  {
+    path: "my-profile",
+    element: <UserProfileDashBoard></UserProfileDashBoard>,
   },
   {
     path: "*",

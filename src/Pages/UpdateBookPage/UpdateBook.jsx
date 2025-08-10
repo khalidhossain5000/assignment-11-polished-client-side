@@ -25,7 +25,7 @@ const UpdateBook = () => {
 
   //fetching this books singlle data
   useEffect(() => {
-    axios(`https://assignment-11-server-five-lake.vercel.app/allBooks/${id}`, {
+    axios(`http://localhost:3000/allBooks/${id}`, {
       headers: {
         authorization: `Bearer ${user?.accessToken}`,
       },
