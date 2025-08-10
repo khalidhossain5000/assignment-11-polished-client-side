@@ -9,10 +9,10 @@ const BorrowedBooksCard = ({ book, DeleteBorrowBook }) => {
     bookId,
     title,
     imageUrl,
-    rating,
+    // rating,
     author,
     quantity,
-    category,
+    // category,
     returnDate,
     _id,
   } = book;
@@ -34,19 +34,15 @@ const BorrowedBooksCard = ({ book, DeleteBorrowBook }) => {
       .then(() => {})
       .catch((error) => {
         console.log(error);
-        
       });
 
     //DELETE BORROW BOOK API
     axios
-      .delete(
-        `http://localhost:3000/borrowed-books/${_id}`,
-        {
-          headers: {
-            authorization: `Bearer ${user?.accessToken}`,
-          },
-        }
-      )
+      .delete(`http://localhost:3000/borrowed-books/${_id}`, {
+        headers: {
+          authorization: `Bearer ${user?.accessToken}`,
+        },
+      })
       .then((res) => {
         const data = res.data;
         if (data.deletedCount) {
@@ -55,9 +51,9 @@ const BorrowedBooksCard = ({ book, DeleteBorrowBook }) => {
             text: "You Returned The Book SuccessFully!Thanks",
             icon: "success",
             theme: "dark",
-            customClass:{
-              popup:'gradient-bg'
-            }
+            customClass: {
+              popup: "gradient-bg",
+            },
           });
           DeleteBorrowBook(bookId);
         }
@@ -66,43 +62,49 @@ const BorrowedBooksCard = ({ book, DeleteBorrowBook }) => {
         console.log(error);
       });
   };
- 
+
   return (
     <div className="container mx-auto">
-     
-      <div className="h-full p-3 rounded-2xl shadow-2xl bg-gradient-to-br from-[#fee8f7] via-[#f1e6fd] to-[#e0d4ff]">
-        <div className="p-2 rounded-xl mx-auto shadow-xl shadow-cyan-200 " >
-      <img className="w-56 h-56 mx-auto " src={imageUrl} alt="" />
-      </div>
-        <div className="cntent space-y-6 mt-3 lg:mt-8 p-2" >
-          <h1 className="text-2xl font-bold text-black">{title}</h1>
-        <h2 className="font-bold text-2xl text-black ">
-          Return Date: <span className="text-xl font-bold text-cyan-700">{returnDate}</span>
-        </h2>
-        <h3 className="font-bold text-black">Quantity : <span className="text-xl lg:text-[17px] font-bold text-cyan-700">{quantity}</span> </h3>
-      <h3 className="font-bold text-black">Author : <span className=" font-bold text-cyan-700">{author}</span></h3>
-      <h3 className="font-bold text-black">Category :<span className="font-bold text-cyan-700">{category}</span> </h3>
+      <div className="flex flex-col justify-between h-auto rounded-md shadow-xl bg-light-secondary shadow-light-secondary">
+        <div className="imgs">
+          <img className="w-56 h-56 lg:w-full mx-auto" src={imageUrl} alt="" />
         </div>
 
-        <div className="rtign my-3 flex items-center gap-3">
-          <span className="text-xl font-bold text-black ">Rating:</span>
-          <Rating
-            initialRating={rating}
-            emptySymbol={<FaRegStar className="text-3xl text-yellow-400" />}
-            fullSymbol={<FaStar className="text-3xl text-yellow-500" />}
-            fractions={2}
-            readonly
-          />
+        <div className="cntstn space-y-3  text-center md:text-left p-3 md:-5">
+          <h1 className="pt-2 md:pt-5 font-secondary text-light-text text-sm md:text-xl lg:text-2xl font-bold">
+            {title}
+          </h1>
+
+          <h3 className="pt-2  font-primary text-light-text text-sm md:text-xl font-bold">
+            Quantity :<span>{quantity ? quantity : 0}</span>{" "}
+          </h3>
+
+          <h3 className="pt-2  font-primary text-light-text text-sm md:text-xl font-bold">
+            Return Data :{returnDate}
+          </h3>
+          <h3 className="pt-2  font-primary text-light-text text-sm md:text-xl font-bold">
+            Author :{author}
+          </h3>
         </div>
-        
-        <div className="mt-6 ">
-          <button
-            onClick={() => handleReturnBook(bookId)}
-            // className="btn btn-xl btn-warning text-2xl font-bold text-black m-6"
-            className="bg-gradient-to-tr from-[#C3DDFD] to-[#FFF9C4] text-[#0A0A23] font-semibold py-3 px-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 w-full cursor-pointer"
-          >
-            Return
-          </button>
+
+        <div className="text-center py-3 lg:py-6 mt-auto rtign space-y-6 lg:space-y-12">
+          {/* <Rating
+          initialRating={rating}
+          emptySymbol={<FaRegStar className="text-3xl text-yellow-400" />}
+          fullSymbol={<FaStar className="text-3xl text-yellow-500" />}
+          fractions={2}
+          readonly
+        /> */}
+
+          <div className="mt-6 ">
+            <button
+              onClick={() => handleReturnBook(bookId)}
+              // className="btn btn-xl btn-warning text-2xl font-bold text-black m-6"
+              className="bg-light-primary px-3 py-4 md:px-9 md:py-4 rounded-sm font-primary font-semibold font-light-text text-md lg:text-xl hover:scale-110 hover:shadow-xl hover:shadow-light-secondary transition duration-300 cursor-pointer text-light-text w-9/12 mx-auto"
+            >
+              Return
+            </button>
+          </div>
         </div>
       </div>
     </div>

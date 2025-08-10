@@ -33,21 +33,21 @@ const BorrowedBooks = () => {
   }, [user]);
   if (borrowLoading) return <Loading />;
   return (
-    <div className="py-36 bg-gradient-to-br from-[#c0e3f7] via-[#dfc7ea] to-[#c0e3f7]">
+    <div className="py-12 md:py-24 bg-light-background">
       <div className="d-title">
         <Helmet>
           <title>Borrowed-Books</title>
         </Helmet>
       </div>
-      <h1 className="text-6xl font-bold text-[#1F2937] text-center py-6">
+      <h1 className="text-xl md:text-2xl lg:text-5xl font-primary text-light-text font-bold md:font-extrabold text-center pb-9 md:py-16">
         Total Borrowed Books : {borrowedBooks.length}
       </h1>
       <div className="no-mes">
         {
-          borrowedBooks.length<=0 && <div><h2 className="text-center py-24 text-3xl font-bold text-black">You Havent Borrowed Any Books Yet!</h2></div>
+          borrowedBooks.length<=0 && <div><h2 className="text-center py-24 text-xl lg:text-3xl font-bold text-light-text">You Havent Borrowed Any Books Yet!</h2></div>
         }
       </div>
-      <div className="py-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 container mx-auto">
+      <div className="py-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 container mx-auto">
         {borrowedBooks.map((book) => (
           <BorrowedBooksCard
             key={book._id}
