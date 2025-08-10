@@ -17,10 +17,10 @@
   --color-light-text: #011801;
 
   /* FOR DARK THEME */
-  --color-dark-primary: #040110;
-  --color-dark-secondary: #8d6ffa;
-  --color-dark-background: #8306a9;
-  --color-dark-text: #e8e1fe;
+  --color-dark-primary: #11ec0e;
+  --color-dark-secondary: #088c36;
+  --color-dark-background: #000500;
+  --color-dark-text: #e7fee7;
 
   /* ... */
 }
@@ -28,6 +28,7 @@
 
 a.active{
     border-bottom: 2px solid #18f115;
+    
     padding-bottom: 5px;
 }
 
