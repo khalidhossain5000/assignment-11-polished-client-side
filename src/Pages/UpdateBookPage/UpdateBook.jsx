@@ -25,11 +25,14 @@ const UpdateBook = () => {
 
   //fetching this books singlle data
   useEffect(() => {
-    axios(`http://localhost:3000/allBooks/${id}`, {
-      headers: {
-        authorization: `Bearer ${user?.accessToken}`,
-      },
-    })
+    axios(
+      `https://assignment-11-polished-server-side.vercel.app/allBooks/${id}`,
+      {
+        headers: {
+          authorization: `Bearer ${user?.accessToken}`,
+        },
+      }
+    )
       .then((res) => {
         const data = res.data;
         console.log(data);
@@ -118,7 +121,7 @@ const UpdateBook = () => {
                 />
               </fieldset>
               {/* quantity */}
-              
+
               {/* quantity */}
               {/* author name */}
               <fieldset
@@ -166,7 +169,6 @@ const UpdateBook = () => {
               </fieldset>
               {/* Category */}
 
-              
               {/* Rating  */}
               <fieldset
                 className="col-span-1 backdrop-blur-md  fieldset rounded-box border border-cyan-300 p-4 "
@@ -183,7 +185,6 @@ const UpdateBook = () => {
                   defaultValue={rating}
                 />
               </fieldset>
-             
             </div>
 
             <input

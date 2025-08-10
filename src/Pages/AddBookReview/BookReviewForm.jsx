@@ -18,16 +18,20 @@ const BookReviewForm = () => {
     const bookReviewData = {
       ...data,
       status: "pending",
-      reviewerName:user?.displayName,
-      reviewerEmail:user?.email
+      reviewerName: user?.displayName,
+      reviewerEmail: user?.email,
     };
     //data sending to db
     axios
-      .post("http://localhost:3000/add-book-review", bookReviewData, {
-        headers: {
-          authorization: `Bearer ${user?.accessToken}`,
-        },
-      })
+      .post(
+        "https://assignment-11-polished-server-side.vercel.app/add-book-review",
+        bookReviewData,
+        {
+          headers: {
+            authorization: `Bearer ${user?.accessToken}`,
+          },
+        }
+      )
       .then((res) => {
         console.log(res);
         if (res.data.insertedId) {
@@ -100,7 +104,7 @@ const BookReviewForm = () => {
                   placeholder="Image URL"
                 />
               </fieldset>
-              
+
               {/* quantity */}
               {/* author name */}
               <fieldset
@@ -108,7 +112,7 @@ const BookReviewForm = () => {
                 style={{ boxShadow: "0 0 10px #00a9e8" }}
               >
                 <label className="label text-light-background text-xl lg:text-2xl pb-3">
-                 Book Author Name
+                  Book Author Name
                 </label>
                 <input
                   type="text"
@@ -177,7 +181,6 @@ const BookReviewForm = () => {
                   placeholder="Enter a rating"
                 />
               </fieldset>
-              
             </div>
 
             <input

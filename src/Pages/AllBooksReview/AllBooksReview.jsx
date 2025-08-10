@@ -15,7 +15,9 @@ const AllBooksReview = () => {
     queryKey: [user?.email],
     queryFn: async () => {
       // const res = await axiosSecure.get("/users");
-      const res = await axios.get("http://localhost:3000/reviews/approved");
+      const res = await axios.get(
+        "https://assignment-11-polished-server-side.vercel.app/reviews/approved"
+      );
 
       return res.data;
     },
@@ -53,32 +55,28 @@ const AllBooksReview = () => {
               </h3>
 
               <div className="text-center py-3 lg:py-6 mt-auto rtign flex flex-col md:flex-row items-center  justify-center">
-             <h2 className=" dark:text-dark-text font-secondary text-light-text text-sm md:text-2xl font-semibold">
-            Rating :
-          </h2>
+                <h2 className=" dark:text-dark-text font-secondary text-light-text text-sm md:text-2xl font-semibold">
+                  Rating :
+                </h2>
                 <div className="lg:pt-2 pl-2">
                   <Rating
-                  initialRating={review?.rating}
-                  emptySymbol={
-                    <FaRegStar className="text-2xl text-light-text" />
-                  }
-                  fullSymbol={
-                    <FaStar className="text-2xl text-light-primary" />
-                  }
-                  fractions={2}
-                  readonly
-                />
+                    initialRating={review?.rating}
+                    emptySymbol={
+                      <FaRegStar className="text-2xl text-light-text" />
+                    }
+                    fullSymbol={
+                      <FaStar className="text-2xl text-light-primary" />
+                    }
+                    fractions={2}
+                    readonly
+                  />
                 </div>
-
-
-
-                
               </div>
 
               <Link to={`/book-review-details/${review?._id}`}>
-                   <button className="bg-light-primary px-3 py-4 md:px-9 md:py-4 rounded-sm font-secondary font-semibold font-light-text text-md lg:text-xl hover:scale-110 hover:shadow-xl hover:shadow-light-secondary transition duration-300 cursor-pointer text-light-text">
-                Details
-              </button> 
+                <button className="bg-light-primary px-3 py-4 md:px-9 md:py-4 rounded-sm font-secondary font-semibold font-light-text text-md lg:text-xl hover:scale-110 hover:shadow-xl hover:shadow-light-secondary transition duration-300 cursor-pointer text-light-text">
+                  Details
+                </button>
               </Link>
             </div>
           </div>

@@ -14,24 +14,25 @@ books , and record data about it.
 
 ## 🚀🚀 Project Live Url : https://assignment-11-library-cloud-app.netlify.app/
 
-
-
 # Installation & Setup Guide
 
 ### Prerequisites
-*(Prerequisites means the things you need to have or prepare before you can run the project)*
 
-- **Node.js** (version 16 or above) — [Download here](https://nodejs.org/)  
+_(Prerequisites means the things you need to have or prepare before you can run the project)_
+
+- **Node.js** (version 16 or above) — [Download here](https://nodejs.org/)
 - **npm** (comes with Node.js)
 - A **Firebase project** with Authentication enabled (Email/Google sign-in)
 
 ---
+
 ## Steps to Run Locally
 
 ### 1. **Clone the repository**
+
 ```bash
   git clone https://github.com/khalidhossain5000/library-management-system-library-cloud-web-app.git
-  
+
   cd the-voice-daily-newspaper-web-app
 
 ```
@@ -46,6 +47,7 @@ books , and record data about it.
   cd the-voice-daily-newspaper-web-app
 
 ```
+
 ### 3.Set up Firebase configuration
 
 - Create a Firebase project in the Firebase Console.
@@ -62,33 +64,27 @@ REACT_APP_FIREBASE_STORAGE_BUCKET=your_storage_bucket
 REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
 REACT_APP_FIREBASE_APP_ID=your_app_id
 ```
+
 ### Replace the values with your Firebase config.
 
 ### 4.Start the development server
+
 ```bash
 
 npm run dev
 
 ```
-###  Open your browser and go to
+
+### Open your browser and go to
+
 ```bash
 
-http://localhost:3000
+https://assignment-11-polished-server-side.vercel.app
 
 
 ```
+
 ## Your app should now be running locally!
-
-
-
-
-
-
-
-
-
-
-
 
 # Features
 

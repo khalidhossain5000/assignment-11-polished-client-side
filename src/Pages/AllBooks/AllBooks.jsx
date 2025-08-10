@@ -11,14 +11,13 @@ const AllBooks = () => {
   const [BookLoading, setBookLoading] = useState(true);
   const [view, setView] = useState("card");
 
-  const { user,loading } = useAuth();
+  const { user, loading } = useAuth();
 
   useEffect(() => {
-
     setBookLoading(true);
-    if(loading) return <Loading/>
+    if (loading) return <Loading />;
 
-    axios("http://localhost:3000/allBooks", {
+    axios("https://assignment-11-polished-server-side.vercel.app/allBooks", {
       headers: {
         authorization: `Bearer ${user?.accessToken}`,
       },
@@ -32,7 +31,7 @@ const AllBooks = () => {
         console.log(error);
         setBookLoading(false);
       });
-  }, [user?.accessToken,loading]);
+  }, [user?.accessToken, loading]);
 
   if (BookLoading) return <Loading />;
 
@@ -47,7 +46,6 @@ const AllBooks = () => {
           <title>All-Books</title>
         </Helmet>
       </div>
-     
 
       <h2 className="text-xl md:text-2xl lg:text-5xl font-primary text-light-text font-bold md:font-extrabold text-center py-9 md:py-16 dark:text-dark-text">
         All Books : {allBooks.length}
@@ -76,13 +74,22 @@ const AllBooks = () => {
                   className="bg-light-primary px-3 py-4 md:px-9 md:py-4 rounded-sm font-secondary font-semibold font-light-text text-md lg:text-xl hover:scale-110 hover:shadow-xl hover:shadow-light-secondary transition duration-300 cursor-pointer text-light-text mt-2 md:mt-3 md:w-10/12 mx-auto"
                   onChange={(e) => setView(e.target.value)}
                 >
-                  <option className="bg-light-text text-light-background " disabled={true}>
+                  <option
+                    className="bg-light-text text-light-background "
+                    disabled={true}
+                  >
                     Select Books View
                   </option>
-                  <option className="bg-light-text text-light-background" value="card">
+                  <option
+                    className="bg-light-text text-light-background"
+                    value="card"
+                  >
                     Card View
                   </option>
-                  <option className="bg-light-text text-light-background" value="table">
+                  <option
+                    className="bg-light-text text-light-background"
+                    value="table"
+                  >
                     Table View
                   </option>
                 </select>
@@ -107,14 +114,30 @@ const AllBooks = () => {
                 {/* head */}
                 <thead className="">
                   <tr className="border-b-1 border-b-light-primary text-light-background text-xl font-normal">
-                    <th className="dark:text-dark-text font-primary text-light-text">#</th>
-                    <th className="dark:text-dark-text border-x-1 border-light-primary font-primary text-light-text">Book Image</th>
-                    <th className="border-x-1 border-light-primary font-primary text-light-text dark:text-dark-text">Book Name</th>
-                    <th className="border-x-1 border-light-primary font-primary text-light-text dark:text-dark-text">Quantity</th>
-                    <th className="border-x-1 border-light-primary font-primary text-light-text dark:text-dark-text">Author</th>
-                    <th className="border-x-1 border-light-primary font-primary text-light-text dark:text-dark-text">Category</th>
-                    <th className="border-x-1 border-light-primary font-primary text-light-text dark:text-dark-text">Rating</th>
-                    <th className="border-x-1 border-light-primary font-primary text-light-text dark:text-dark-text">Actions</th>
+                    <th className="dark:text-dark-text font-primary text-light-text">
+                      #
+                    </th>
+                    <th className="dark:text-dark-text border-x-1 border-light-primary font-primary text-light-text">
+                      Book Image
+                    </th>
+                    <th className="border-x-1 border-light-primary font-primary text-light-text dark:text-dark-text">
+                      Book Name
+                    </th>
+                    <th className="border-x-1 border-light-primary font-primary text-light-text dark:text-dark-text">
+                      Quantity
+                    </th>
+                    <th className="border-x-1 border-light-primary font-primary text-light-text dark:text-dark-text">
+                      Author
+                    </th>
+                    <th className="border-x-1 border-light-primary font-primary text-light-text dark:text-dark-text">
+                      Category
+                    </th>
+                    <th className="border-x-1 border-light-primary font-primary text-light-text dark:text-dark-text">
+                      Rating
+                    </th>
+                    <th className="border-x-1 border-light-primary font-primary text-light-text dark:text-dark-text">
+                      Actions
+                    </th>
                   </tr>
                 </thead>
                 <tbody className="">

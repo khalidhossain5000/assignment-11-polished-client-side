@@ -1,6 +1,6 @@
 import React, { use, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
-import bgImg from "../../assets/AuthBg/monutain-darsk.jpg"
+import bgImg from "../../assets/AuthBg/monutain-darsk.jpg";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../Context/AuthContext";
 import { Helmet } from "react-helmet-async";
@@ -27,7 +27,7 @@ const Register = () => {
       setPasswordError(
         "Password Length must be at least 6 characters And Must have an Uppercase and a Lowercase letter"
       );
-     return
+      return;
     }
     // password validation end
     // FIREBASE USER
@@ -35,15 +35,19 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         // data sending to the DB START
-         const userInfo = {
+        const userInfo = {
           name,
           email,
           role: "user", //default role
-          profilePic:photo,
+          profilePic: photo,
         };
-        axios.post("http://localhost:3000/users", userInfo)
-      .then(()=>alert("User Send to the db successfully"))
-      .catch((error)=>console.log(error))
+        axios
+          .post(
+            "https://assignment-11-polished-server-side.vercel.app/users",
+            userInfo
+          )
+          .then(() => alert("User Send to the db successfully"))
+          .catch((error) => console.log(error));
         // data sending to the DB ENDS
         //update profile here
         updateUserProfile({ displayName: name, photoURL: photo })
@@ -79,7 +83,8 @@ const Register = () => {
           style: {
             border: "1px solid black",
             color: "white",
-            backgroundImage: "linear-gradient(to bottom right, #31c3df, #3a47d5)"
+            backgroundImage:
+              "linear-gradient(to bottom right, #31c3df, #3a47d5)",
           },
         });
         // navigate('/')
@@ -160,12 +165,12 @@ const Register = () => {
       className="py-16 bg-no-repeat bg-cover bg-top "
     >
       <div className="dynamic-title">
-              <Helmet>
-                <title>Register</title>
-              </Helmet>
-            </div>
+        <Helmet>
+          <title>Register</title>
+        </Helmet>
+      </div>
       <div className="py-24">
-        <div className="container mx-auto" >
+        <div className="container mx-auto">
           <div className="title text-center space-y-2 py-12">
             <h1 className="text-xl md:text-2xl lg:text-5xl font-primary text-light-primary font-bold md:font-extrabold text-center pb-6">
               Register Your Account Now
@@ -174,7 +179,10 @@ const Register = () => {
               Please enter your details to Register.
             </h5>
           </div>
-          <div className="card w-full max-w-5xl mx-auto inset-shadow-3xl py-16  backdrop-blur-xl rounded-xl " style={{boxShadow:'0 0 30px #71f7a130'}}>
+          <div
+            className="card w-full max-w-5xl mx-auto inset-shadow-3xl py-16  backdrop-blur-xl rounded-xl "
+            style={{ boxShadow: "0 0 30px #71f7a130" }}
+          >
             <div className="card-body">
               <form
                 onSubmit={handleRegister}
@@ -188,7 +196,6 @@ const Register = () => {
                   name="name"
                   type="text"
                   className="w-full py-6 lg:py-8 text-light-background bg-transparent border-b-2 border-b-light-primary focus:outline-none focus:border-light-primary text-xl placeholder:text-light-background"
-                  
                   placeholder="Enter Your Name"
                 />
                 <br />
@@ -225,7 +232,7 @@ const Register = () => {
                   className="w-full py-6 lg:py-8 text-light-background bg-transparent border-b-2 border-b-light-primary focus:outline-none focus:border-light-primary text-xl placeholder:text-light-background"
                   placeholder="Enter Password"
                 />
-             
+
                 {/* password error */}
                 <div className="py-2 w-full">
                   {passwordError && (

@@ -13,7 +13,9 @@ const AllBookReview = () => {
     queryKey: [user?.email],
     queryFn: async () => {
       // const res = await axiosSecure.get("/users");
-      const res = await axios.get("http://localhost:3000/all-book-review");
+      const res = await axios.get(
+        "https://assignment-11-polished-server-side.vercel.app/all-book-review"
+      );
 
       return res.data;
     },
@@ -25,7 +27,7 @@ const AllBookReview = () => {
   const handleStatus = async (reviewId) => {
     try {
       const res = await axios.patch(
-        `http://localhost:3000/book-review/${reviewId}`,
+        `https://assignment-11-polished-server-side.vercel.app/book-review/${reviewId}`,
         {
           status: "approved",
         }
@@ -48,7 +50,6 @@ const AllBookReview = () => {
             All Book Review
           </h1>
         </div>
-       
       </div>
       <div className="overflow-x-auto rounded-box border border-light-primary p-6 bg-light-secondary dark:bg-dark-secondary container mx-auto mt-6 lg:mt-12">
         <table className="table">
@@ -92,7 +93,10 @@ const AllBookReview = () => {
                   {review?.rating}
                 </td>
 
-                <td className="text-xs md:text-[19px] urbanist font-bold text-light-text border-b border-light-primary" dark:text-dark-text>
+                <td
+                  className="text-xs md:text-[19px] urbanist font-bold text-light-text border-b border-light-primary"
+                  dark:text-dark-text
+                >
                   {review?.reviewerName}
                 </td>
 

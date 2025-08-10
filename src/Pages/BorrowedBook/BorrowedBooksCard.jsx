@@ -23,7 +23,7 @@ const BorrowedBooksCard = ({ book, DeleteBorrowBook }) => {
     //UPDATE QUANTITY API
     axios
       .patch(
-        `http://localhost:3000/all-books/quantity/${bookId}`,
+        `https://assignment-11-polished-server-side.vercel.app/all-books/quantity/${bookId}`,
         {},
         {
           headers: {
@@ -38,11 +38,14 @@ const BorrowedBooksCard = ({ book, DeleteBorrowBook }) => {
 
     //DELETE BORROW BOOK API
     axios
-      .delete(`http://localhost:3000/borrowed-books/${_id}`, {
-        headers: {
-          authorization: `Bearer ${user?.accessToken}`,
-        },
-      })
+      .delete(
+        `https://assignment-11-polished-server-side.vercel.app/borrowed-books/${_id}`,
+        {
+          headers: {
+            authorization: `Bearer ${user?.accessToken}`,
+          },
+        }
+      )
       .then((res) => {
         const data = res.data;
         if (data.deletedCount) {

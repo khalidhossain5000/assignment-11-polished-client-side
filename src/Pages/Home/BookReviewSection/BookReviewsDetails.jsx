@@ -16,11 +16,14 @@ const BookReviewsDetails = () => {
   useEffect(() => {
     setDetailsLoading(true);
     if (loading) return <Loading />;
-    axios(`http://localhost:3000/review-details/${id}`, {
-      headers: {
-        authorization: `Bearer ${user?.accessToken}`,
-      },
-    })
+    axios(
+      `https://assignment-11-polished-server-side.vercel.app/review-details/${id}`,
+      {
+        headers: {
+          authorization: `Bearer ${user?.accessToken}`,
+        },
+      }
+    )
       .then((res) => {
         const data = res.data;
         setBooks(data);

@@ -12,7 +12,9 @@ const AllUsers = () => {
     queryKey: [user?.email],
     queryFn: async () => {
       // const res = await axiosSecure.get("/users");
-      const res = await axios.get("http://localhost:3000/users");
+      const res = await axios.get(
+        "https://assignment-11-polished-server-side.vercel.app/users"
+      );
 
       return res.data;
     },
@@ -29,7 +31,6 @@ const AllUsers = () => {
             All Users
           </h1>
         </div>
-       
       </div>
       <div className="overflow-x-auto rounded-box border-1 border-light-primary p-6 bg-white max-w-7xl mx-auto mt-6 lg:mt-12">
         <table className="table ">

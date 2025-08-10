@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
 import useRole from "../../Hooks/userRole";
@@ -123,13 +123,13 @@ const NavBar = () => {
   return (
     <div
       className={
-        `font-secondary shadow-xl fixed top-0 z-50 w-full transition-all duration-300 ease-out ` +
+        `font-secondary shadow-xl fixed top-0 z-50 w-full transition-all duration-300 ease-out` +
         (isSticky
-          ? "bg-[#f9fff990] backdrop-blur-md shadow-sm "
+          ? "bg-light-background backdrop-blur-md shadow-sm "
           : "bg-light-background dark:bg-dark-secondary")
       }
     >
-      <div className="navbar container mx-auto">
+      <div className="navbar container mx-auto py-6">
         <div className="navbar-start flex-1  flex justify-between md:justify-start">
           {/* mobile menu */}
           <div className="dropdown">
@@ -159,7 +159,7 @@ const NavBar = () => {
           </div>
           <div className="">
             <h3 className="pt-2 md:w-9/12 font-secondary text-light-text text-sm md:text-xl lg:text-3xl font-bold dark:text-dark-text">
-            LibraryCloud
+            <Link to='/'>LibraryCloud</Link>
             </h3>
           </div>
         </div>

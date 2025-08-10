@@ -13,34 +13,36 @@ import { Helmet } from "react-helmet-async";
 import Loading from "../../Components/Loading/Loading";
 
 const BookDetails = () => {
-
   const { id } = useParams();
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [books, setBooks] = useState([]);
   const [returnDate, setReturnDate] = useState(null);
-  const [detailsLoading,setDetailsLoading]=useState(true)
-  const { user,loading } = useAuth();
+  const [detailsLoading, setDetailsLoading] = useState(true);
+  const { user, loading } = useAuth();
   //data loading use effect starts here
   useEffect(() => {
-    setDetailsLoading(true)
-    if(loading) return <Loading/>
-    axios(`http://localhost:3000/allBooks/${id}`, {
-      headers: {
-        authorization: `Bearer ${user?.accessToken}`,
-      },
-    })
+    setDetailsLoading(true);
+    if (loading) return <Loading />;
+    axios(
+      `https://assignment-11-polished-server-side.vercel.app/allBooks/${id}`,
+      {
+        headers: {
+          authorization: `Bearer ${user?.accessToken}`,
+        },
+      }
+    )
       .then((res) => {
         const data = res.data;
         setBooks(data);
-        setDetailsLoading(false)
+        setDetailsLoading(false);
       })
       .catch((error) => {
         console.log(error);
-        setDetailsLoading(false)
+        setDetailsLoading(false);
       });
-  }, [id,user?.accessToken,loading]);
+  }, [id, user?.accessToken, loading]);
   //data loading use effect ends
-  if(detailsLoading) return <Loading/>
+  if (detailsLoading) return <Loading />;
   // MODAL RELATED FUNC
   const openModal = () => {
     setModalIsOpen(true);
@@ -50,7 +52,7 @@ const BookDetails = () => {
   const closeModal = () => {
     setModalIsOpen(false);
   };
-  Modal.setAppElement('#root');
+  Modal.setAppElement("#root");
   // MODAL RELATED FUNC ENDS
 
   const {
@@ -104,7 +106,8 @@ const BookDetails = () => {
             style: {
               border: "1px solid black",
               color: "white",
-              backgroundImage: "linear-gradient(to bottom right, #31c3df, #3a47d5)"
+              backgroundImage:
+                "linear-gradient(to bottom right, #31c3df, #3a47d5)",
             },
           });
         }
@@ -119,17 +122,16 @@ const BookDetails = () => {
             title: "Book is already Borrowed!",
             text: "You have already borrowed this book. Return it first to borrow again.",
             theme: "dark",
-            customClass:{
-              popup:'error-gradient-bg'
-            }
+            customClass: {
+              popup: "error-gradient-bg",
+            },
           });
         } else {
           console.log("Borrow error occurred");
         }
-        
       });
   };
-  
+
   return (
     <div className="py-12 lg:py-24 bg-light-background ">
       <div className="d-title">
@@ -140,22 +142,34 @@ const BookDetails = () => {
 
       <div className="container mx-auto py-24 lg:flex justify-center gap-12 shadow-xl shadow-light-secondary border-1 border-light-secondary rounded-md">
         <div className="imgs rounded-sm p-5 !h-full border-1 border-light-primary">
-          <img className="hover:scale-105 hover:saturate-150 cursor-pointer transition duration-300 lg:w-96 mx-auto w-56" src={imageUrl} alt="" />
+          <img
+            className="hover:scale-105 hover:saturate-150 cursor-pointer transition duration-300 lg:w-96 mx-auto w-56"
+            src={imageUrl}
+            alt=""
+          />
         </div>
 
         <div className="contnt w-full space-y-2">
-          <h1 className="font-secondary text-light-text text-sm md:text-xl lg:text-3xl font-bold">{title}</h1>
+          <h1 className="font-secondary text-light-text text-sm md:text-xl lg:text-3xl font-bold">
+            {title}
+          </h1>
           <h2 className="font-secondary text-light-text text-sm md:text-xl font-bold">
-            By : <span className="text-light-primary font-extrabold font-primary">{author}</span>
+            By :{" "}
+            <span className="text-light-primary font-extrabold font-primary">
+              {author}
+            </span>
           </h2>
           <h2 className="font-secondary text-light-text text-sm md:text-xl font-semibold">
-            Category : <span className="text-light-primary font-primary font-extrabold">{category}</span>
+            Category :{" "}
+            <span className="text-light-primary font-primary font-extrabold">
+              {category}
+            </span>
           </h2>
 
           <div className="rtign lg:py-3 flex flex-col md:flex-row gap-3 items-center">
             <h2 className="font-secondary text-light-text text-sm md:text-2xl font-semibold">
-            Rating :
-          </h2>
+              Rating :
+            </h2>
             <Rating
               initialRating={rating}
               emptySymbol={<FaRegStar className="text-xl text-light-text" />}
@@ -163,16 +177,21 @@ const BookDetails = () => {
               fractions={2}
               readonly
             />
-            
           </div>
           <p className="py-2 md:py-4 font-secondary text-light-text text-sm lg:text-xl ">
-            <span className="font-secondary text-light-text text-sm md:text-xl lg:text-2xl font-bold">Description</span> : {description}
+            <span className="font-secondary text-light-text text-sm md:text-xl lg:text-2xl font-bold">
+              Description
+            </span>{" "}
+            : {description}
           </p>
           <h2 className="font-secondary text-light-text text-sm md:text-2xl font-semibold">
             Quantity : {quantity}
           </h2>
           <p className="py-2 md:py-4 font-secondary text-light-text text-sm lg:text-xl ">
-            <span className="font-secondary text-light-text text-sm md:text-xl lg:text-2xl font-bold">Content of Books </span>: <span className="font-semibold text-xl">{content}</span>
+            <span className="font-secondary text-light-text text-sm md:text-xl lg:text-2xl font-bold">
+              Content of Books{" "}
+            </span>
+            : <span className="font-semibold text-xl">{content}</span>
           </p>
           <div className="">
             <button
@@ -234,14 +253,13 @@ const BookDetails = () => {
             readOnly
           />
           <input
-          disabled={quantity <= 0}
-          onClick={handleBorrowBook}
-          type="submit"
-          value="Submit"
-           className="bg-light-text px-3 py-4 md:px-9 md:py-4 rounded-sm font-secondary font-semibold font-light-text text-md lg:text-xl hover:scale-105 hover:shadow-xl hover:shadow-light-secondary transition duration-300 cursor-pointer text-light-background w-6/12 lg:mx-auto mx-2 md:mx-0"
-        />
+            disabled={quantity <= 0}
+            onClick={handleBorrowBook}
+            type="submit"
+            value="Submit"
+            className="bg-light-text px-3 py-4 md:px-9 md:py-4 rounded-sm font-secondary font-semibold font-light-text text-md lg:text-xl hover:scale-105 hover:shadow-xl hover:shadow-light-secondary transition duration-300 cursor-pointer text-light-background w-6/12 lg:mx-auto mx-2 md:mx-0"
+          />
         </div>
-        
       </Modal>
 
       {/* modal end */}

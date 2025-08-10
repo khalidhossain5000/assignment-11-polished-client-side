@@ -17,11 +17,15 @@ const AddBook = () => {
 
     //data sending to db
     axios
-      .post("http://localhost:3000/books", data, {
-        headers: {
-          authorization: `Bearer ${user?.accessToken}`,
-        },
-      })
+      .post(
+        "https://assignment-11-polished-server-side.vercel.app/books",
+        data,
+        {
+          headers: {
+            authorization: `Bearer ${user?.accessToken}`,
+          },
+        }
+      )
       .then((res) => {
         if (res.data.insertedId) {
           toast.success("Book Added Successfully", {
