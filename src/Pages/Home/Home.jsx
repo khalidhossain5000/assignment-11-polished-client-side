@@ -6,6 +6,7 @@ import Testimonial from "../../Components/Testimonial/Testimonial";
 
 import NewArrivals from "../../Components/NewArrivalSection/NewArrivals";
 import { Helmet } from "react-helmet-async";
+import HowItWorks from "../../Components/HowItWorks/HowItWorks";
 
 const Home = () => {
   return (
@@ -19,9 +20,9 @@ const Home = () => {
       <Slider></Slider>
       <BookCategories></BookCategories>
       <NewArrivals />
-      <h3 className=" text-3xl text-center font-bold py-24 ">
-        This is testing Color theme as shdgo
-      </h3>
+      
+
+      <HowItWorks/>
       <Testimonial></Testimonial>
     </div>
   );
