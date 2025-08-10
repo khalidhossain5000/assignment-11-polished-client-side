@@ -107,7 +107,7 @@ const BookDetails = () => {
               border: "1px solid black",
               color: "white",
               backgroundImage:
-                "linear-gradient(to bottom right, #31c3df, #3a47d5)",
+                "linear-gradient(to bottom right, #18f115, #18f115)",
             },
           });
         }

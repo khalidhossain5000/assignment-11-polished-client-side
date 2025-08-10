@@ -32,9 +32,9 @@ const NavBar = () => {
           secondary: "#ef54e2",
         },
         style: {
-          border: "1px solid black",
+          border: "1px solid 18f115",
           color: "white",
-          backgroundImage: "linear-gradient(to bottom right, #31c3df, #3a47d5)",
+          backgroundImage: "linear-gradient(to bottom right, #18f115, #18f115)",
         },
       });
     });

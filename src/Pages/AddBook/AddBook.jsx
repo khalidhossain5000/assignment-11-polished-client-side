@@ -32,14 +32,14 @@ const AddBook = () => {
             className: "w-[300px] h-[100px] text-xl font-bold",
             removeDelay: 1000,
             iconTheme: {
-              primary: "#16061e",
-              secondary: "#ef54e2",
+              primary: "#011801",
+              secondary: "#011801",
             },
             style: {
-              border: "1px solid black",
+              border: "1px solid 011801",
               color: "white",
               backgroundImage:
-                "linear-gradient(to bottom right, #31c3df, #3a47d5)",
+                "linear-gradient(to bottom right, #18f115, #18f115)",
             },
           });
         }

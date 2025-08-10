@@ -60,14 +60,14 @@ const Register = () => {
               className: "w-[300px] h-[100px] text-xl font-bold ",
               removeDelay: 1000,
               iconTheme: {
-                primary: "#0d0518",
-                secondary: "#fce6fa",
+                primary: "#18f115",
+                secondary: "#18f115",
               },
 
               style: {
                 border: "1px solid black",
                 color: "white",
-                backgroundImage: "linear-gradient(to top left,#f60002,#d408d1)",
+                backgroundImage: "linear-gradient(to top left,#18f115,#18f115)",
               },
             });
             console.log(error);
@@ -77,14 +77,14 @@ const Register = () => {
           className: "w-[300px] h-[100px] text-xl font-bold ",
           removeDelay: 1000,
           iconTheme: {
-            primary: "#16061e",
-            secondary: "#ef54e2",
+            primary: "#18f115",
+            secondary: "#18f115",
           },
           style: {
-            border: "1px solid black",
+            border: "1px solid 18f115",
             color: "white",
             backgroundImage:
-              "linear-gradient(to bottom right, #31c3df, #3a47d5)",
+              "linear-gradient(to bottom right, #18f115, #18f115)",
           },
         });
         // navigate('/')
@@ -146,7 +146,7 @@ const Register = () => {
               style: {
                 border: "1px solid black",
                 color: "white",
-                backgroundImage: "linear-gradient(to top left,#f60002,#d408d1)",
+                backgroundImage: "linear-gradient(to top left,#18f115,#18f115)",
               },
             });
           });

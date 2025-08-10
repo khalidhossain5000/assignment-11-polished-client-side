@@ -102,7 +102,7 @@ a.active{
 /* sweet alert custom background color */
 .gradient-bg{
   
-  background: linear-gradient(to bottom right,  #03012a,  #090979) !important;
+  background: linear-gradient(to bottom right,  #18f115,  #71f7a130) !important;
   font-size: 20px;
 }
 .error-gradient-bg{
