@@ -112,53 +112,46 @@ const LogIn = () => {
       <div className="py-24">
         <div className="container mx-auto ">
           <div className="title text-center space-y-2 py-12">
-            <h3 className="text-2xl font-bold text-cyan-300">Welcome Back</h3>
-            <h1 className="text-6xl py-6 font-bold text-[#fffaff]">
+            <h3 className="font-secondary text-light-primary text-center text-sm md:text-xl lg:text-3xl font-bold">Welcome Back</h3>
+            <h1 className="text-6xl py-6 font-bold text-light-background">
               Log In your account
             </h1>
-            <h5 className="text-xl font-semibold text-cyan-300 mb-3">
+            <h5 className="font-secondary text-light-primary text-center text-sm md:text-xl lg:text-3xl font-bold pb-6 md:pb-12">
               Please enter your details to log in.
             </h5>
           </div>
           <div
-            className=" card w-full max-w-3xl mx-auto inset-shadow-3xl inset-shadow-indigo-500 py-16 border-1 border-cyan-300  backdrop-blur-xl rounded-2xl "
-            style={{ boxShadow: "0 0 90px cyan" }}
+            className=" card w-full max-w-3xl mx-auto inset-shadow-xl inset-shadow-indigo-500 py-16  backdrop-blur-xl rounded-2xl "
+            style={{ boxShadow: "0 0 0px 71f7a130" }}
           >
             <div className="card-body">
               <form
                 onSubmit={handleLogin}
                 className=" flex flex-col justify-center items-center"
               >
-                <label className="w-full text-left label text-2xl text-white font-semibold">
+                <label className="w-full text-left label text-2xl text-light-background font-semibold">
                   Email
                 </label>
                 <br />
                 <input
                   name="email"
                   type="email"
-                  className="w-full py-6 lg:py-8 text-white bg-transparent border-b-2 border-b-cyan-100 focus:outline-none focus:border-cyan-400 text-xl placeholder:text-white"
+                  className="w-full py-6 lg:py-8 text-light-background bg-transparent border-b-2 border-b-cyan-100 focus:outline-none focus:text-light-primary text-xl placeholder:text-light-background"
                   placeholder="Email"
                 />
                 <br />
-                <label className="w-full text-left label text-2xl text-white font-semibold">
+                <label className="w-full text-left label text-2xl text-light-background font-semibold">
                   Password
                 </label>
                 <br />
                 <input
                   name="password"
                   type="password"
-                  className="w-full py-6 lg:py-8 text-white bg-transparent border-b-2 border-b-cyan-100 focus:outline-none focus:border-cyan-400 text-xl placeholder:text-white"
+                  className="w-full py-6 lg:py-8 text-light-background bg-transparent border-b-2 border-b-cyan-100 focus:outline-none focus:text-light-primary text-xl placeholder:text-light-background"
                   placeholder="Password"
                 />
-                {/* FORGER PASSWORD  */}
-                <div className="pt-3 w-full">
-                  <Link
-                    to="/forget-password"
-                    className="text-left text-[25px] link link-hover text-cyan-300"
-                  >
-                    Forgot password?
-                  </Link>
-                </div>
+                
+                
                 {/* wrong pass */}
                 <div>
                   {wrongPassword && (
@@ -166,19 +159,19 @@ const LogIn = () => {
                   )}
                 </div>{" "}
                 *
-                <button className="btn w-full bg-gradient-to-b from-[#0076ff] via-[#00bfff] to-[#0083ff]  p-8 border-cyan-300 text-xl text-pink-100 rounded-xl mt-4 hover:bg-gradient-to-br hover:from-[#001d16] hover:via-[#00ad82] hover:to-[#1d717e] transition duration-300 hover:scale-105 ease-in-out hover:animate-pulse">
+                <button className="bg-light-primary px-3 py-4 md:px-9 md:py-4 rounded-sm font-primary font-semibold font-light-text text-md lg:text-xl hover:scale-110 hover:shadow-xl hover:shadow-light-secondary transition duration-300 cursor-pointer text-light-text w-full mt-6">
                   Login
                 </button>
               </form>
               {/* social login start */}
-              <div className="border-t border-[#fce7f350] py-3 mt-5 social-login w-full flex flex-col items-center justify-center">
-                <h2 className="border-b border-[#fce7f350] w-full text-center border[#fce7f350] pb-5 text-2xl font-bold text-gray-300">
+              <div className="border-t py-3 mt-5 social-login w-full flex flex-col items-center justify-center">
+                <h2 className="border-b w-full text-center border[#fce7f350] pb-5 text-2xl font-bold text-gray-300">
                   Or
                 </h2>
                 {/* Google */}
                 <button
                   onClick={handleGoogleLogin}
-                  className="mt-5 w-full mx-auto btn bg-white text-black border-[#e5e5e5] text-xl p-8 rounded-xl"
+                  className="mt-5 w-full mx-auto btn bg-light-background text-light-text border-[#e5e5e5] text-xl p-8 rounded-xl"
                 >
                   <svg
                     aria-label="Google logo"
@@ -217,7 +210,7 @@ const LogIn = () => {
                   <Link
                     state={{ from: logInLocation.state?.from || "/" }}
                     to="/register"
-                    className="text-cyan-300 mx-2 font-bold"
+                    className="text-light-primary mx-2 font-bold"
                   >
                     Register
                   </Link>

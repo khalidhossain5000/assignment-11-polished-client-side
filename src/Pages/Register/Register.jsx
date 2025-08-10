@@ -27,7 +27,7 @@ const Register = () => {
       setPasswordError(
         "Password Length must be at least 6 characters And Must have an Uppercase and a Lowercase letter"
       );
-      return;
+     return
     }
     // password validation end
     // FIREBASE USER
@@ -167,69 +167,65 @@ const Register = () => {
       <div className="py-24">
         <div className="container mx-auto" >
           <div className="title text-center space-y-2 py-12">
-            <h1 className="text-6xl font-bold text-cyan-200 ">
+            <h1 className="text-xl md:text-2xl lg:text-5xl font-primary text-light-primary font-bold md:font-extrabold text-center pb-6">
               Register Your Account Now
             </h1>
-            <h5 className="text-2xl font-semibold text-pink-100 my-6">
+            <h5 className="font-secondary text-light-primary text-center text-sm md:text-xl lg:text-3xl font-bold pb-6 md:pb-12">
               Please enter your details to Register.
             </h5>
           </div>
-          <div className="card w-full max-w-5xl mx-auto inset-shadow-3xl py-16 border-1 border-cyan-300 backdrop-blur-xl rounded-xl " style={{boxShadow:'0 0 30px cyan'}}>
+          <div className="card w-full max-w-5xl mx-auto inset-shadow-3xl py-16  backdrop-blur-xl rounded-xl " style={{boxShadow:'0 0 30px #71f7a130'}}>
             <div className="card-body">
               <form
                 onSubmit={handleRegister}
                 className="flex flex-col justify-center items-center px-6"
               >
-                <label className="w-full text-left label text-2xl text-white font-semibold">
+                <label className="w-full text-left label text-2xl text-light-backgroundfont-semibold">
                   Name
                 </label>
                 <br />
                 <input
                   name="name"
                   type="text"
-                  className="w-full py-6 lg:py-8 text-white bg-transparent border-b-2 border-b-cyan-100 focus:outline-none focus:border-cyan-400 text-xl placeholder:text-white"
+                  className="w-full py-6 lg:py-8 text-light-background bg-transparent border-b-2 border-b-light-primary focus:outline-none focus:border-light-primary text-xl placeholder:text-light-background"
                   
                   placeholder="Enter Your Name"
                 />
                 <br />
-                <label className="w-full text-left label text-2xl text-white font-semibold">
+                <label className="w-full text-left label text-2xl text-light-background font-semibold">
                   Photo Url
                 </label>
                 <br />
                 <input
                   name="photo"
                   type="text"
-                  className="w-full py-6 lg:py-8 text-white bg-transparent border-b-2 border-b-cyan-100 focus:outline-none focus:border-cyan-400 text-xl placeholder:text-white"
+                  className="w-full py-6 lg:py-8 text-light-background bg-transparent border-b-2 border-b-light-primary focus:outline-none focus:border-light-primary text-xl placeholder:text-light-background"
                   placeholder="Enter Photo Url"
                 />
                 <br />
-                <label className="w-full text-left label text-2xl text-white font-semibold">
+                <label className="w-full text-left label text-2xl text-light-background font-semibold">
                   Email
                 </label>
                 <br />
                 <input
                   name="email"
                   type="email"
-                  className="w-full py-6 lg:py-8 text-white bg-transparent border-b-2 border-b-cyan-100 focus:outline-none focus:border-cyan-400 text-xl placeholder:text-white"
+                  className="w-full py-6 lg:py-8 text-light-background bg-transparent border-b-2 border-b-light-primary focus:outline-none focus:border-light-primary text-xl placeholder:text-light-background"
                   placeholder="Enter Your Email"
                 />
                 <br />
 
-                <label className="text-left w-full label text-2xl text-white font-semibold">
+                <label className="text-left w-full label text-2xl text-light-background font-semibold">
                   Password
                 </label>
                 <br />
                 <input
                   name="password"
                   type="password"
-                  className="w-full py-6 lg:py-8 text-white bg-transparent border-b-2 border-b-cyan-100 focus:outline-none focus:border-cyan-400 text-xl placeholder:text-white"
+                  className="w-full py-6 lg:py-8 text-light-background bg-transparent border-b-2 border-b-light-primary focus:outline-none focus:border-light-primary text-xl placeholder:text-light-background"
                   placeholder="Enter Password"
                 />
-                <div className="pt-3 w-full">
-                  <a className="text-left text-[25px] link link-hover text-cyan-100">
-                    Forgot password?
-                  </a>
-                </div>
+             
                 {/* password error */}
                 <div className="py-2 w-full">
                   {passwordError && (
@@ -237,7 +233,7 @@ const Register = () => {
                   )}{" "}
                   *
                 </div>
-                <button className="btn w-full bg-gradient-to-b from-[#0076ff] via-[#00bfff] to-[#0083ff]  p-8 border-cyan-300 text-xl text-pink-100 rounded-xl mt-4 hover:bg-gradient-to-br hover:from-[#001d16] hover:via-[#00ad82] hover:to-[#1d717e] transition duration-300 hover:scale-105 ease-in-out hover:animate-pulse">
+                <button className="bg-light-primary px-3 py-4 md:px-9 md:py-4 rounded-sm font-primary font-semibold font-light-text text-md lg:text-xl hover:scale-110 hover:shadow-xl hover:shadow-light-secondary transition duration-300 cursor-pointer text-light-text w-full mt-6">
                   Register
                 </button>
               </form>
@@ -249,7 +245,7 @@ const Register = () => {
                 {/* Google */}
                 <button
                   onClick={handleGoogleRegister}
-                  className="mt-5 w-full mx-auto btn bg-white text-black border-[#e5e5e5] text-xl p-8 rounded-xl"
+                  className="mt-5 w-full mx-auto btn bg-light-background text-black text-xl p-8 rounded-xl"
                 >
                   <svg
                     aria-label="Google logo"
@@ -283,11 +279,11 @@ const Register = () => {
               </div>
               {/* DONT HAVE ACCOUNT START HERE*/}
               <div className="text-center">
-                <h5 className="w-full  text-2xl font-bold mt-6 text-gray-300">
+                <h5 className="w-full  text-2xl font-bold mt-6 text-light-background">
                   Already have an account?
                   <Link
                     to="/login"
-                    className="text-cyan-500 text-3xl font-bold mx-2"
+                    className="text-light-primary text-3xl font-bold mx-2"
                   >
                     Login
                   </Link>

@@ -39,8 +39,8 @@ const Footer = () => {
     </>
   );
   return (
-    <div className="bg-gradient-to-br relative pt-24">
-      <div className="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#07061a_40%,#321976_100%)]"></div>
+    <div className="bg-light-secondary dark:bg-dark-secondary relative pt-24">
+      
       <div className="">
         <div className="container mx-auto">
           <div className="py-12 content text-center lg:text-left lg:flex  lg:justify-between">
@@ -51,7 +51,7 @@ const Footer = () => {
                   src={logo}
                   alt=""
                 />
-                <p className=" text-[#fce6fa] text-[18px] max-w-sm mt-3 md:mt-6 lg:mt-9">
+                <p className=" text-light-text dark:text-dark-text text-[18px] max-w-sm mt-3 md:mt-6 lg:mt-9">
                   Blienum nhaedrum torquatos nec eul, vietraxit periculis ex,
                   nihil is in mei. Xei ariculaeuripidis, fincartem ei est.
                   Dlienum phaed is in mei. Lei an Hericulaeuripidis, hincartem
@@ -61,64 +61,64 @@ const Footer = () => {
             </div>
 
             <div className="links text-xl space-y-3">
-              <h2 className="text-[#fce6fa] text-3xl font-bold">
+              <h2 className="text-light-text dark:text-dark-text text-3xl font-bold">
                 UseFul Links
               </h2>
-              <ul className="mt-3 lg:mt-9 text-xl font-medium text-[#fce6fa] space-y-4">
+              <ul className="mt-3 lg:mt-9 text-xl font-medium text-light-text dark:text-dark-text space-y-4">
                 {links}
               </ul>
             </div>
 
             <div className="contact mt-6 lg:mt-0">
-              <h2 className="text-[#fce6fa] text-3xl font-bold mb-12">
+              <h2 className="text-light-text dark:text-dark-text text-3xl font-bold mb-12">
                 Contact
               </h2>
               {/* join */}
 
               <p className=" mb-6 flex items-center justify-center lg:justify-start gap-3 lg:text-2xl font-semibold text-[#ded1ff]">
-                <TiLocationArrowOutline size={40} className="text-[#ded1ff]" />
-                <span>Dhaka Bangladesh.</span>
+                <TiLocationArrowOutline size={40} className="text-light-text dark:text-dark-text" />
+                <span className="text-light-text dark:text-dark-text">Dhaka Bangladesh.</span>
               </p>
               <p className="mb-6 flex justify-center lg:justify-start items-center gap-3 lg:text-2xl font-semibold text-[#ded1ff]">
-                <MdOutlineEmail size={30} className="text-[#ded1ff]" />
-                <span>info@librarycloud.com</span>
+                <MdOutlineEmail size={30} className="text-light-text dark:text-dark-text" />
+                <span className="text-light-text dark:text-dark-text">info@librarycloud.com</span>
               </p>
               <p className="flex justify-center lg:justify-start items-center gap-3 lg:text-2xl font-semibold text-[#ded1ff]">
-                <FaPhoneAlt size={30} className="text-[#ded1ff]" />
-                <span>01234567890</span>
+                <FaPhoneAlt size={30} className="text-light-text dark:text-dark-text" />
+                <span className="text-light-text dark:text-dark-text">01234567890</span>
               </p>
             </div>
 
             <div className="socail mt-6 lg:mt-0">
-              <h2 className="text-[#fce6fa] text-3xl font-bold mb-9">
+              <h2 className="text-light-text dark:text-dark-text text-3xl font-bold mb-9">
                 Follow Us
               </h2>
               {/* join */}
 
-              <div className="grid grid-cols-3 mx-3 lg:mx-0 md:grid-cols-2 items-end lg:justify-between gap-9">
+              <div className="grid grid-cols-3 mx-3 lg:mx-0 md:grid-cols-2 items-end lg:justify-between gap-9 text-light-text dark:text-dark-text">
                 <a href="https://facebook.com/" target="_blank">
-                  <FaFacebook size={50} fill="#fef1ff" />
+                  <FaFacebook size={50} className="text-light-text dark:text-dark-text"/>
                 </a>
                 <a href="https://x.com/" target="_blank">
-                  <BsTwitterX size={50} fill="#fef1ff" />
+                  <BsTwitterX size={50} className="text-light-text dark:text-dark-text"/>
                 </a>
                 <a href="https://github.com/khalidhossain5000" target="_blank">
-                  <FaGithub size={50} fill="#fef1ff" />
+                  <FaGithub size={50} className="text-light-text dark:text-dark-text"/>
                 </a>
                 <a href="https://youtube.com/" target="_blank">
-                  <FaYoutube size={50} fill="red" />
+                  <FaYoutube size={50}  className="text-light-text dark:text-dark-text"/>
                 </a>
                 <a href="https://www.linkedin.com/" target="_blank">
-                  <FaLinkedin size={50} fill="#fef1ff" />
+                  <FaLinkedin size={50} className="text-light-text dark:text-dark-text"/>
                 </a>
               </div>
             </div>
           </div>
         </div>
-        <div className="copyright py-6 border-t border-[#608cf8]">
-          <h3 className="text-center text-2xl text-[#ffffff]">
+        <div className="copyright py-6 border-t text-light-text dark:text-dark-text">
+          <h3 className="text-center text-2xl text-light-text dark:text-dark-text">
             &copy;{" "}
-            <Link to="/" className="font-bold text-[#ffffff] mr-2">
+            <Link to="/" className="font-bold text-light-text dark:text-dark-text mr-2">
               LibraryCloud 
             </Link>
             All Rights Reserved
