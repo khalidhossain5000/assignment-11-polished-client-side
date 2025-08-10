@@ -9,7 +9,7 @@ const AllBookReview = () => {
   const { user } = useAuth();
 
   //FETCH ALL USERS
-  const { data, isLoading,refetch } = useQuery({
+  const { data, isLoading, refetch } = useQuery({
     queryKey: [user?.email],
     queryFn: async () => {
       // const res = await axiosSecure.get("/users");
@@ -20,14 +20,16 @@ const AllBookReview = () => {
     enabled: !!user?.email,
   });
 
-  
   if (isLoading) return <Loading />;
 
-  const handleStatus= async (reviewId) => {
+  const handleStatus = async (reviewId) => {
     try {
-      const res = await axios.patch(`http://localhost:3000/book-review/${reviewId}`, {
-        status: "approved",
-      });
+      const res = await axios.patch(
+        `http://localhost:3000/book-review/${reviewId}`,
+        {
+          status: "approved",
+        }
+      );
 
       if (res.data.modifiedCount > 0) {
         Swal.fire("Approved!", "Article has been approved.", "success");
@@ -91,20 +93,25 @@ const AllBookReview = () => {
                 <td className="text-xs md:text-[19px] urbanist font-bold text-gray-800 border-b border-gray-300">
                   {review?.rating}
                 </td>
-                
+
                 <td className="text-xs md:text-[19px] urbanist font-bold text-gray-800 border-b border-gray-300">
                   {review?.reviewerName}
                 </td>
-                
+
                 <td className="text-xs md:text-[19px] urbanist font-bold text-gray-800 border-b border-gray-300">
                   {review?.reviewerEmail}
                 </td>
-                
+
                 <td className="text-xs md:text-[19px] urbanist font-bold text-gray-800 border-b border-gray-300">
                   {review?.status}
                 </td>
                 <td className="text-xs md:text-[19px] urbanist font-bold text-gray-800 border-b border-gray-300">
-                  <button onClick={()=>handleStatus(review?._id)} className="btn btn-sm btn-success">Approve</button>
+                  <button
+                    onClick={() => handleStatus(review?._id)}
+                    className="btn btn-sm btn-success"
+                  >
+                    Approve
+                  </button>
                 </td>
               </tr>
             ))}

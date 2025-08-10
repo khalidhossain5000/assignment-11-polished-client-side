@@ -7,6 +7,7 @@ import Testimonial from "../../Components/Testimonial/Testimonial";
 import NewArrivals from "../../Components/NewArrivalSection/NewArrivals";
 import { Helmet } from "react-helmet-async";
 import HowItWorks from "../../Components/HowItWorks/HowItWorks";
+import BookReviewSection from "./BookReviewSection/BookReviewSection";
 
 const Home = () => {
   return (
@@ -20,10 +21,8 @@ const Home = () => {
       <Slider></Slider>
       <BookCategories></BookCategories>
       <NewArrivals />
-      
-
       <HowItWorks/>
-      <Testimonial></Testimonial>
+      <BookReviewSection/>
     </div>
   );
 };

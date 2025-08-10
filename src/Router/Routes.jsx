@@ -17,6 +17,7 @@ import UserProfileDashBoard from "../Pages/DashBoard/UserProfileDashBoard";
 import AllUsers from "../Pages/DashBoard/AllUsers/AllUsers";
 import BookReviewForm from "../Pages/AddBookReview/BookReviewForm";
 import AllBookReview from "../Pages/DashBoard/AllBookReview/AllBookReview";
+import AllBooksReview from "../Pages/AllBooksReview/AllBooksReview";
 
 export const router = createBrowserRouter([
   {
@@ -30,9 +31,17 @@ export const router = createBrowserRouter([
       {
         path: "all-books",
         element: (
-          <PrivateRoute>
+         
             <AllBooks></AllBooks>
-          </PrivateRoute>
+         
+        ),
+      },
+      {
+        path: "all-books-review",
+        element: (
+         
+            <AllBooksReview></AllBooksReview>
+         
         ),
       },
       {

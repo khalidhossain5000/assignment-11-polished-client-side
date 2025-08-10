@@ -72,36 +72,48 @@ const NavBar = () => {
           to="/all-books"
           className="hover:text-[#01180195] transition duration-300 text-sm md:text-[17px]"
         >
-          All Books{" "}
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/add-books"
-          className="hover:text-[#01180195] transition duration-300 text-sm md:text-[17px]"
-        >
-          Add Book{" "}
+          All Books
         </NavLink>
       </li>
 
+      {user && (
+        <>
+          <li>
+            <NavLink
+              to="/add-books"
+              className="hover:text-[#01180195] transition duration-300 text-sm md:text-[17px]"
+            >
+              Add Book{" "}
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink
+              to="/borrowed-books/:email"
+              className="hover:text-[#01180195] transition duration-300 text-sm md:text-[17px]"
+            >
+              Borrowed Book
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink
+              to="/add-book-review"
+              className="hover:text-[#01180195] transition duration-300 text-sm md:text-[17px]"
+            >
+              Add Book Review
+            </NavLink>
+          </li>
+        </>
+      )}
       <li>
         <NavLink
-          to="/borrowed-books/:email"
+          to="/all-books-review"
           className="hover:text-[#01180195] transition duration-300 text-sm md:text-[17px]"
         >
-          Borrowed Book{" "}
+          All Books Review
         </NavLink>
       </li>
-
-      <li>
-        <NavLink
-          to="/add-book-review"
-          className="hover:text-[#01180195] transition duration-300 text-sm md:text-[17px]"
-        >
-          Add Book Review
-        </NavLink>
-      </li>
-
       {!roleLoading && role === "admin" && (
         <li>
           <NavLink to="/admin-dashboard">Admin Dashboard</NavLink>

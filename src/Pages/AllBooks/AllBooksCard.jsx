@@ -2,7 +2,9 @@ import React from "react";
 import { Link } from "react-router";
 import Rating from "react-rating";
 import { FaStar, FaRegStar } from "react-icons/fa";
+import useAuth from "../../Hooks/useAuth";
 const AllBooksCard = ({ book }) => {
+  const {user}=useAuth()
   const {
     title,
     imageUrl,
@@ -45,12 +47,14 @@ const AllBooksCard = ({ book }) => {
           readonly
         />
 
-        <Link
+        {
+          user?.email && <Link
           to={`/update-book/${_id}`}
           className="block lg:inline bg-gradient-to-tr from-[#C3DDFD] to-[#FFF9C4] hover:from-[#d6f0ff] hover:to-[#dbcdff] hover:text-black text-xl text-black font-bold py-3 px-6 rounded-md shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer"
         >
           Update
         </Link>
+        }
       </div>
     </div>
   );
