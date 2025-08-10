@@ -102,19 +102,19 @@ const AllBooks = () => {
           {/* TABLE VIEW CONTAINER */}
 
           {view === "table" && (
-            <div className="bg-gradient-to-br from-[#fee8f7] via-[#f1e6fd] to-[#e0d4ff] shadow-2xl rounded-xl mt-6 lg:mt-0 p-6 lg:w-[80%] overflow-x-auto">
-              <table className="table border-1 border-cyan-600 table-auto w-full ">
+            <div className="bg-light-secondary shadow-md rounded-xl mt-6 lg:mt-0 p-6 lg:w-[80%] overflow-x-auto">
+              <table className="table border-1 border-light-primary table-auto w-full ">
                 {/* head */}
                 <thead className="">
-                  <tr className="border-b-1 border-b-cyan-600 text-black text-xl font-normal">
-                    <th className="">#</th>
-                    <th className="border-x-1 border-x-cyan-300">Book Image</th>
-                    <th className="border-x-1 border-x-cyan-300">Book Name</th>
-                    <th className="border-x-1 border-x-cyan-300">Author</th>
-                    <th className="border-x-1 border-x-cyan-300">Category</th>
-                    <th className="border-x-1 border-x-cyan-300">Quantity</th>
-                    <th className="border-x-1 border-x-cyan-300">Rating</th>
-                    <th className="border-x-1 border-x-cyan-300">Actions</th>
+                  <tr className="border-b-1 border-b-light-primary text-light-background text-xl font-normal">
+                    <th className="font-primary text-light-text">#</th>
+                    <th className="border-x-1 border-light-primary font-primary text-light-text">Book Image</th>
+                    <th className="border-x-1 border-light-primary font-primary text-light-text">Book Name</th>
+                    <th className="border-x-1 border-light-primary font-primary text-light-text">Quantity</th>
+                    <th className="border-x-1 border-light-primary font-primary text-light-text">Author</th>
+                    <th className="border-x-1 border-light-primary font-primary text-light-text">Category</th>
+                    <th className="border-x-1 border-light-primary font-primary text-light-text">Rating</th>
+                    <th className="border-x-1 border-light-primary font-primary text-light-text">Actions</th>
                   </tr>
                 </thead>
                 <tbody className="">

@@ -21,9 +21,9 @@ const AllBooksTable = ({ allBooks, index }) => {
     
       
        
-        <tr className="border-b-1 border-b-cyan-600 border-r-1 text-[17px] font-normal">
-          <td className="text-black">{index+1}</td>
-          <td className="border-x-1 border-x-cyan-300 text-black">
+        <tr className="border-b-1 border-b-light-primary border-r-1 text-[17px] font-normal">
+          <td className="light-text">{index+1}</td>
+          <td className="border-x-1 border-x-light-primary light-text">
             <div className="flex items-center gap-3">
               <div className="avatar">
                 <div className="mask rounded-2xl h-12 w-12 lg:w-20 lg:h-20">
@@ -37,15 +37,15 @@ const AllBooksTable = ({ allBooks, index }) => {
               <div></div>
             </div>
           </td>
-          <td className="border-x-1 border-x-cyan-300 text-black">{title}</td>
-          <td className="border-x-1 border-x-cyan-300 text-black">{quantity}</td>
-          <td className="border-x-1 border-x-cyan-300 text-black">{author}</td>
-          <td className="border-x-1 border-x-cyan-300 text-black">{category}</td>
-          <td className="border-x-1 border-x-cyan-300 text-black"><div className="rtign text-center my-6">
+          <td className="border-x-1 border-x-light-primary  font-primary text-light-text">{title}</td>
+          <td className="border-x-1 border-x-light-primary light-text font-primary ">{quantity}</td>
+          <td className="border-x-1 border-x-light-primary light-text font-primary ">{author}</td>
+          <td className="border-x-1 border-x-light-primary light-text font-primary">{category}</td>
+          <td className="border-x-1 border-x-light-primary light-text font-primary"><div className="rtign text-center my-6">
             <Rating
               initialRating={rating}
-              emptySymbol={<FaRegStar className="text-3xl text-yellow-400" />}
-              fullSymbol={<FaStar className="text-3xl text-[#ff9b04]" />}
+              emptySymbol={<FaRegStar className="text-3xl text-light-primary" />}
+              fullSymbol={<FaStar className="text-3xl text-light-primary" />}
               fractions={2}
               readonly
             />
@@ -55,10 +55,10 @@ const AllBooksTable = ({ allBooks, index }) => {
             <div className="space-y-3">
               <Link
                       to={`/update-book/${_id}`}
-                      // className=" btn btn-warning font-bold text-black "
-                      className=" bg-gradient-to-tr from-[#C3DDFD] to-[#FFF9C4] text-xl text-black font-bold py-3 px-6 rounded-md shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer"
+                      // className=" btn btn-warning font-bold light-text "
+                      
                     >
-                      Update
+                      <button className="bg-light-primary px-3 py-4 md:px-9 md:py-4 rounded-sm font-primary font-semibold font-light-text text-md lg:text-xl hover:scale-110 hover:shadow-xl hover:shadow-light-secondary transition duration-300 cursor-pointer text-light-text w-fullmx-auto">Update</button>
                     </Link>
               
             </div>
