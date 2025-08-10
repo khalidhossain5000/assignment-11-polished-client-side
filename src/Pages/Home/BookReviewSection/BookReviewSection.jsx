@@ -8,6 +8,7 @@ import "swiper/css";
 import Loading from "../../../Components/Loading/Loading";
 import Rating from "react-rating";
 import { FaRegStar, FaStar } from "react-icons/fa";
+import { Link } from "react-router";
 const BookReviewSection = () => {
   const { user } = useAuth();
 
@@ -20,14 +21,13 @@ const BookReviewSection = () => {
 
       return res.data;
     },
-    enabled: !!user?.email,
   });
 
   console.log(data, isLoading);
   if (isLoading) return <Loading />;
   return (
     <div className="py-24 relative z-0">
-      <h2 className="text-xl md:text-2xl lg:text-5xl font-primary text-light-text font-bold md:font-extrabold text-center pb-9 md:pb-16 dark:text-dark-text">
+      <h2 className="text-xl md:text-2xl lg:text-5xl font-primary text-light-text  font-bold md:font-extrabold text-center pb-9 md:pb-16 dark:text-dark-text">
         Book Review
       </h2>
 
@@ -47,7 +47,9 @@ const BookReviewSection = () => {
           }}
         >
           {data?.map((review) => (
+           
             <SwiperSlide key={review._id}>
+              <Link to='/all-books-review'>
               <div className="publisher-card bg-light-secondary dark:bg-dark-secondary shadow-md rounded-md flex flex-col items-center p-4 gap-2">
                 <div className="flex-1 w-full">
                   <img
@@ -83,7 +85,9 @@ const BookReviewSection = () => {
 
                 </div>
               </div>
+              </Link>
             </SwiperSlide>
+          
           ))}
         </Swiper>
       </div>

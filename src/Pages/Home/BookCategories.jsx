@@ -20,7 +20,7 @@ const BookCategories = () => {
         {
           categories.map((cat,i)=><div 
           key={i}
-          className="shadow-2xl h-full flex flex-col justify-between pb-3 md:pb-6 bg-dark-secondary dark:shadow-dark-primary dark:shadow-sm">
+          className="shadow-2xl h-full flex flex-col justify-between pb-3 md:pb-6 bg-light-background dark:bg-dark-secondary dark:shadow-dark-primary dark:shadow-sm">
               <div className="igms rounded-t-xl w-full">
                 <img src={cat.image} className="h-full rounded-t-xl w-full" alt="" />
               </div>

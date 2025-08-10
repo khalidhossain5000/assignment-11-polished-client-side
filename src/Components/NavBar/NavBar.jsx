@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
-import logo from "../../assets/logo/librarycloudlogo.png";
 import useRole from "../../Hooks/userRole";
 const NavBar = () => {
   const { user, logOutUser } = useAuth();
@@ -62,7 +61,7 @@ const NavBar = () => {
       <li>
         <NavLink
           to="/"
-          className="hover:text-[#01180195] transition duration-300 text-sm md:text-[17px]"
+          className="hover:text-[#01180195] transition duration-300 text-sm md:text-[17px] text-light-text dark:text-dark-text"
         >
           Home
         </NavLink>
@@ -70,7 +69,7 @@ const NavBar = () => {
       <li>
         <NavLink
           to="/all-books"
-          className="hover:text-[#01180195] transition duration-300 text-sm md:text-[17px]"
+          className="hover:text-[#01180195] transition duration-300 text-sm md:text-[17px] text-light-text dark:text-dark-text"
         >
           All Books
         </NavLink>
@@ -81,7 +80,7 @@ const NavBar = () => {
           <li>
             <NavLink
               to="/add-books"
-              className="hover:text-[#01180195] transition duration-300 text-sm md:text-[17px]"
+              className="hover:text-[#01180195] transition duration-300 text-sm md:text-[17px] text-light-text dark:text-dark-text"
             >
               Add Book{" "}
             </NavLink>
@@ -90,7 +89,7 @@ const NavBar = () => {
           <li>
             <NavLink
               to="/borrowed-books/:email"
-              className="hover:text-[#01180195] transition duration-300 text-sm md:text-[17px]"
+              className="hover:text-[#01180195] transition duration-300 text-sm md:text-[17px] text-light-text dark:text-dark-text"
             >
               Borrowed Book
             </NavLink>
@@ -99,7 +98,7 @@ const NavBar = () => {
           <li>
             <NavLink
               to="/add-book-review"
-              className="hover:text-[#01180195] transition duration-300 text-sm md:text-[17px]"
+              className="hover:text-[#01180195] transition duration-300 text-sm md:text-[17px] text-light-text dark:text-dark-text"
             >
               Add Book Review
             </NavLink>
@@ -109,14 +108,14 @@ const NavBar = () => {
       <li>
         <NavLink
           to="/all-books-review"
-          className="hover:text-[#01180195] transition duration-300 text-sm md:text-[17px]"
+          className="hover:text-[#01180195] transition duration-300 text-sm md:text-[17px] text-light-text dark:text-dark-text"
         >
           All Books Review
         </NavLink>
       </li>
       {!roleLoading && role === "admin" && (
         <li>
-          <NavLink to="/admin-dashboard">Admin Dashboard</NavLink>
+          <NavLink to="/admin-dashboard" className='hover:text-[#01180195] transition duration-300 text-sm md:text-[17px] text-light-text dark:text-dark-text'>Admin Dashboard</NavLink>
         </li>
       )}
     </>
@@ -126,8 +125,8 @@ const NavBar = () => {
       className={
         `font-secondary shadow-xl fixed top-0 z-50 w-full transition-all duration-300 ease-out ` +
         (isSticky
-          ? "bg-[#f9fff990] backdrop-blur-md shadow-sm"
-          : "bg-light-background dark:bg-dark-background")
+          ? "bg-[#f9fff990] backdrop-blur-md shadow-sm "
+          : "bg-light-background dark:bg-dark-secondary")
       }
     >
       <div className="navbar container mx-auto">
@@ -159,11 +158,9 @@ const NavBar = () => {
             </ul>
           </div>
           <div className="">
-            <img
-              className="max-w-[120px] lg:max-w-[150px]"
-              src={logo}
-              alt="library-cloud-logo"
-            />
+            <h3 className="pt-2 md:w-9/12 font-secondary text-light-text text-sm md:text-xl lg:text-3xl font-bold dark:text-dark-text">
+            LibraryCloud
+            </h3>
           </div>
         </div>
 
