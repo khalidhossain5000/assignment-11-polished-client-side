@@ -123,11 +123,11 @@ const NavBar = () => {
   return (
     <div
       className={
-        `font-secondary shadow-xl fixed top-0 z-50 w-full transition-all duration-300 ease-out` +
-        (isSticky
-          ? "bg-light-background backdrop-blur-md shadow-sm "
-          : "bg-light-background dark:bg-dark-secondary")
-      }
+    `font-secondary shadow-xl fixed top-0 z-50 w-full transition-all duration-300 ease-out ` +
+    (isSticky
+      ? "bg-[#f9fff990] dark:bg-dark-secondary shadow-sm" // Sticky অবস্থায় solid bg
+      : "bg-light-background dark:bg-dark-secondary") // Normal অবস্থায় আগের bg
+  }
     >
       <div className="navbar container mx-auto py-6">
         <div className="navbar-start flex-1  flex justify-between md:justify-start">
