@@ -131,53 +131,53 @@ const BookDetails = () => {
   };
   
   return (
-    <div className="py-12 lg:py-24 bg-gradient-to-br from-[#c0e3f7] via-[#dfc7ea] to-[#c0e3f7] ">
+    <div className="py-12 lg:py-24 bg-light-background ">
       <div className="d-title">
         <Helmet>
           <title>Book-Details</title>
         </Helmet>
       </div>
-      
-      <h2 className="text-3xl md:text-6xl font-bold text-[#1F2937] text-center py-6">
-        Book Details of : {title}
-      </h2>
 
-      <div className="container mx-auto py-24 lg:flex justify-center gap-12">
-        <div className="imgs rounded-2xl p-6 !h-full shadow-xl shadow-cyan-500">
-          <img className="lg:w-96 mx-auto w-56" src={imageUrl} alt="" />
+      <div className="container mx-auto py-24 lg:flex justify-center gap-12 shadow-xl shadow-light-secondary border-1 border-light-secondary rounded-md">
+        <div className="imgs rounded-sm p-5 !h-full border-1 border-light-primary">
+          <img className="hover:scale-105 hover:saturate-150 cursor-pointer transition duration-300 lg:w-96 mx-auto w-56" src={imageUrl} alt="" />
         </div>
 
-        <div className="contnt shadow-xl shadow-cyan-500 rounded-2xl  p-9 w-full space-y-2">
-          <h1 className="text-3xl font-bold text-[#1f2937]">{title}</h1>
-          <h2 className="text-xl font-semibold text-[#1f2937] py-6">
-            By : {author}
+        <div className="contnt w-full space-y-2">
+          <h1 className="font-secondary text-light-text text-sm md:text-xl lg:text-3xl font-bold">{title}</h1>
+          <h2 className="font-secondary text-light-text text-sm md:text-xl font-bold">
+            By : <span className="text-light-primary font-extrabold font-primary">{author}</span>
           </h2>
-          <h2 className="text-xl font-semibold text-[#1f2937] lg:py-3">
-            Category : {category}
+          <h2 className="font-secondary text-light-text text-sm md:text-xl font-semibold">
+            Category : <span className="text-light-primary font-primary font-extrabold">{category}</span>
           </h2>
-          <div className="rtign lg:py-3">
+
+          <div className="rtign lg:py-3 flex flex-col md:flex-row gap-3 items-center">
+            <h2 className="font-secondary text-light-text text-sm md:text-2xl font-semibold">
+            Rating :
+          </h2>
             <Rating
               initialRating={rating}
-              emptySymbol={<FaRegStar className="text-3xl text-yellow-600" />}
-              fullSymbol={<FaStar className="text-3xl text-yellow-500" />}
+              emptySymbol={<FaRegStar className="text-xl text-light-text" />}
+              fullSymbol={<FaStar className="text-xl text-light-primary" />}
               fractions={2}
               readonly
             />
             
           </div>
-          <p className="text-xl font-semibold text-[#1f2937] ">
-            Description : {description}
+          <p className="py-2 md:py-4 font-secondary text-light-text text-sm lg:text-xl ">
+            <span className="font-secondary text-light-text text-sm md:text-xl lg:text-2xl font-bold">Description</span> : {description}
           </p>
-          <h2 className="text-2xl font-bold text-[#1f2937]">
+          <h2 className="font-secondary text-light-text text-sm md:text-2xl font-semibold">
             Quantity : {quantity}
           </h2>
-          <p className="text-3xl font-semibold text-[#1f2937] ">
-            Content of Books : <span className="font-semibold text-xl">{content}</span>
+          <p className="py-2 md:py-4 font-secondary text-light-text text-sm lg:text-xl ">
+            <span className="font-secondary text-light-text text-sm md:text-xl lg:text-2xl font-bold">Content of Books </span>: <span className="font-semibold text-xl">{content}</span>
           </p>
-          <div className="text-center">
+          <div className="">
             <button
               onClick={openModal}
-              className="w-9/12 my-6 bg-gradient-to-tr from-[#C3DDFD] to-[#FFF9C4] hover:from-[#d6f0ff] hover:to-[#dbcdff] hover:text-black text-xl text-black font-bold py-3 px-6 rounded-md shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer disabled:cursor-not-allowed disabled:bg-red-800 disabled:from-transparent disabled:via-transparent disabled:to-transparent disabled:text-white"
+              className="bg-light-primary px-3 py-4 md:px-9 md:py-4 rounded-sm font-secondary font-semibold font-light-text text-md lg:text-xl hover:scale-105 hover:shadow-xl hover:shadow-light-secondary transition duration-300 cursor-pointer text-light-text w-full mx-2 md:mx-0"
               disabled={quantity <= 0}
             >
               Borrow

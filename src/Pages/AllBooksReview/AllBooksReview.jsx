@@ -23,48 +23,53 @@ const AllBooksReview = () => {
 
   console.log(data, isLoading);
   if (isLoading) return <Loading />;
-  return <div className="bg-light-background py-12 md:py-24">
-    <h2 className="text-xl md:text-2xl lg:text-5xl font-primary text-light-text font-bold md:font-extrabold text-center py-9 md:py-16">
+  return (
+    <div className="bg-light-background py-12 md:py-24">
+      <h2 className="text-xl md:text-2xl lg:text-5xl font-primary text-light-text font-bold md:font-extrabold text-center py-9 md:py-16">
         All Books Review
       </h2>
-    <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-9">
-    {
-      data.map((review)=><div className="flex flex-col justify-between h-auto rounded-md shadow-xl bg-light-secondary shadow-light-secondary">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-9">
+        {data.map((review) => (
+          <div className="flex flex-col justify-between h-auto rounded-md shadow-xl bg-light-secondary shadow-light-secondary">
+            <div className="imgs">
+              <img
+                className="w-56 h-56 lg:w-9/12 p-3 md:p-3  mx-auto"
+                src={review?.imageUrl}
+                alt=""
+              />
+            </div>
 
-      <div className="imgs">
-        <img className="w-56 h-56 lg:w-9/12 p-3 md:p-3  mx-auto" src={review?.imageUrl} alt="" />
+            <div className="cntstn space-y-3  text-center">
+              <h1 className="pt-2 md:pt-5 font-secondary text-light-text text-sm md:text-xl lg:text-2xl font-bold">
+                {review?.title}
+              </h1>
+
+              <h3 className="pt-2  font-primary text-light-text text-sm md:text-xl font-bold">
+                Author :<span>{review?.author}</span>{" "}
+              </h3>
+              <h3 className="pt-2  font-primary text-light-text text-sm md:text-xl font-bold">
+                Category :<span>{review?.category}</span>{" "}
+              </h3>
+
+              <div className="text-center py-3 lg:py-6 mt-auto rtign space-y-6 lg:space-y-12">
+                <Rating
+                  initialRating={review?.rating}
+                  emptySymbol={
+                    <FaRegStar className="text-3xl text-light-text" />
+                  }
+                  fullSymbol={
+                    <FaStar className="text-3xl text-light-primary" />
+                  }
+                  fractions={2}
+                  readonly
+                />
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
-
-      <div className="cntstn space-y-3  text-center">
-
-        <h1 className="pt-2 md:pt-5 font-secondary text-light-text text-sm md:text-xl lg:text-2xl font-bold">{review?.title}</h1>
-
-        <h3 className="pt-2  font-primary text-light-text text-sm md:text-xl font-bold">
-          Author :
-          <span >{review?.author}</span>{" "}
-        </h3>
-        <h3 className="pt-2  font-primary text-light-text text-sm md:text-xl font-bold">
-          Category :
-          <span >{review?.category}</span>{" "}
-        </h3>
-
-        <div className="text-center py-3 lg:py-6 mt-auto rtign space-y-6 lg:space-y-12">
-        <Rating
-          initialRating={review?.rating}
-          emptySymbol={<FaRegStar className="text-3xl text-yellow-400" />}
-          fullSymbol={<FaStar className="text-3xl text-yellow-500" />}
-          fractions={2}
-          readonly
-        /> 
-        </div>
-      </div>
-
-      
-      
-    </div>)
-    }
     </div>
-  </div>;
+  );
 };
 
 export default AllBooksReview;

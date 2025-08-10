@@ -22,7 +22,7 @@ const BookCategory = () => {
         {name} Categories : {categoryBooks.length}
       </h1>
 
-      <div className="container mx-auto py-12 lg:py-24 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 justify-center items-center px-6 lg:px-0">
+      <div className="container mx-auto py-12 lg:py-24 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center items-center px-6 lg:px-0">
         {categoryBooks.map((singleBook) => (
           <CategoryCard
             singleBook={singleBook}
