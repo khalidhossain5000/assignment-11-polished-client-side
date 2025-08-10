@@ -45,7 +45,11 @@ const HowItWorks = () => {
                         
                     </div>)
                 }
+               
            </div>
+            <div className='mt-3 md:mt-6 text-center'>
+                            <button className="bg-light-primary px-3 py-4 md:px-9 md:py-4 rounded-sm font-secondary font-semibold font-light-text text-md lg:text-xl hover:scale-110 hover:shadow-xl hover:shadow-light-secondary transition duration-300 cursor-pointer text-light-text">Register Now To Get Started</button>
+                        </div>
         </div>
     );
 };
