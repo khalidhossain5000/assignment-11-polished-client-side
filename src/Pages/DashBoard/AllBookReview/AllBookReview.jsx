@@ -42,19 +42,19 @@ const AllBookReview = () => {
   };
   return (
     <div className=" ">
-      <div className="px-12 w-full  mx-auto rounded-2xl shadow-xl h-48 bg-light-background flex items-center justify-center relative overflow-hidden ">
+      <div className="px-12 w-full  mx-auto rounded-2xl shadow-xl h-48 bg-light-background flex items-center justify-center relative overflow-hidden dark:bg-dark-background">
         <div className="text-center px-4">
-          <h1 className="text-xl md:text-2xl lg:text-4xl font-primary text-light-text font-bold md:font-extrabold text-center">
+          <h1 className="text-xl md:text-2xl lg:text-4xl font-primary text-light-text font-bold md:font-extrabold text-center dark:text-dark-text">
             All Book Review
           </h1>
         </div>
        
       </div>
-      <div className="overflow-x-auto rounded-box border border-light-primary p-6 bg-light-secondary container mx-auto mt-6 lg:mt-12">
+      <div className="overflow-x-auto rounded-box border border-light-primary p-6 bg-light-secondary dark:bg-dark-secondary container mx-auto mt-6 lg:mt-12">
         <table className="table">
           {/* head */}
           <thead>
-            <tr className="text-xl md:text-2xl text-light-text rancho border-b border-b-light-primary ">
+            <tr className="text-xl md:text-2xl text-light-text rancho border-b border-b-light-primary dark:text-dark-text">
               <th>#</th>
               <th>Book Image</th>
               <th>Book Name</th>
@@ -72,27 +72,27 @@ const AllBookReview = () => {
             {data.map((review, i) => (
               <tr key={i} className="">
                 <th className="border-b border-light-primary">{i + 1}</th>
-                <td className="border-b border-light-primary">
+                <td className="border-b border-light-primary dark:text-dark-text">
                   <img
                     src={review?.imageUrl}
                     alt={review?.name}
                     className="w-12 h-12 rounded-full"
                   />
                 </td>
-                <td className="text-xs md:text-[17px] urbanist font-medium text-light-text border-b border-light-primary">
+                <td className="text-xs md:text-[17px] urbanist font-medium text-light-text border-b border-light-primary dark:text-dark-text">
                   {review?.title}
                 </td>
-                <td className="text-xs md:text-[17px] urbanist font-medium text-light-text border-b border-light-primary">
+                <td className="text-xs md:text-[17px] urbanist font-medium text-light-text border-b border-light-primary dark:text-dark-text">
                   {review?.author}
                 </td>
-                <td className="text-xs md:text-[19px] urbanist font-bold text-light-text border-b border-light-primary">
+                <td className="text-xs md:text-[19px] urbanist font-bold text-light-text border-b border-light-primary dark:text-dark-text">
                   {review?.category}
                 </td>
-                <td className="text-xs md:text-[19px] urbanist font-bold text-light-text border-b border-light-primary">
+                <td className="text-xs md:text-[19px] urbanist font-bold text-light-text border-b border-light-primary dark:text-dark-text">
                   {review?.rating}
                 </td>
 
-                <td className="text-xs md:text-[19px] urbanist font-bold text-light-text border-b border-light-primary">
+                <td className="text-xs md:text-[19px] urbanist font-bold text-light-text border-b border-light-primary" dark:text-dark-text>
                   {review?.reviewerName}
                 </td>
 
@@ -100,10 +100,10 @@ const AllBookReview = () => {
                   {review?.reviewerEmail}
                 </td>
 
-                <td className="text-xs md:text-[19px] urbanist font-bold text-light-text border-b border-light-primary">
+                <td className="text-xs md:text-[19px] urbanist font-bold text-light-text border-b border-light-primary dark:text-dark-text">
                   {review?.status}
                 </td>
-                <td className="text-xs md:text-[19px] urbanist font-bold text-light-text border-b border-light-primary">
+                <td className="text-xs md:text-[19px] urbanist font-bold text-light-text border-b border-light-primary dark:text-dark-text">
                   <button
                     onClick={() => handleStatus(review?._id)}
                     className="btn btn-sm btn-success"

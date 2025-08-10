@@ -18,7 +18,7 @@ const AllBooksCard = ({ book }) => {
 
 
   return (
-    <div className="flex flex-col justify-between h-auto rounded-md shadow-xl bg-light-secondary shadow-light-secondary">
+    <div className="flex flex-col justify-between h-auto rounded-md shadow-xl bg-light-secondary shadow-light-secondary dark:shadow-dark-background dark:bg-dark-secondary">
 
       <div className="imgs">
         <img className="w-56 h-56 lg:w-full mx-auto" src={imageUrl} alt="" />
@@ -26,16 +26,16 @@ const AllBooksCard = ({ book }) => {
 
       <div className="cntstn space-y-3  text-center">
 
-        <h1 className="pt-2 md:pt-5 font-secondary text-light-text text-sm md:text-xl lg:text-2xl font-bold">{title}</h1>
+        <h1 className="pt-2 md:pt-5 font-secondary dark:text-dark-text text-light-text text-sm md:text-xl lg:text-2xl font-bold">{title}</h1>
 
-        <h3 className="pt-2  font-primary text-light-text text-sm md:text-xl font-bold">
+        <h3 className="pt-2  font-primary dark:text-dark-text text-light-text text-sm md:text-xl font-bold">
           Quantity :
           <span >{quantity ? quantity : 0}</span>{" "}
         </h3>
         
       </div>
 
-      <div className="text-center py-3 lg:py-6 mt-auto rtign space-y-6 lg:space-y-12">
+      <div className="text-center  dark:text-dark-text py-3 lg:py-6 mt-auto rtign space-y-6 lg:space-y-12">
         {/* <Rating
           initialRating={rating}
           emptySymbol={<FaRegStar className="text-3xl text-yellow-400" />}
